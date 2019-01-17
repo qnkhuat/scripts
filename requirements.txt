@@ -1,0 +1,13 @@
+h5py
+keras
+numpy
+pandas
+pillow
+scikit-learn
+scipy
+scrapy
+seaborn
+tensorboard
+torchvision
+fastai
+pytorch

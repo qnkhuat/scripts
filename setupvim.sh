@@ -15,7 +15,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 # setup vimrc
-curl https://gist.githubusercontent.com/qnkhuat/8b299d6c3dd0ea64d8bf0fbaefc5c79b/raw/5134a2fbb404163ff3ae59bfd87e2725c2292397/.vimrc -o ~/.vimrc
+curl https://raw.githubusercontent.com/qnkhuat/scripts/master/.vimrc
 
 
 # Setup Ag for search

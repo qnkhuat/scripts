@@ -1,3 +1,4 @@
+pytorch
 h5py
 keras
 numpy
@@ -10,4 +11,3 @@ seaborn
 tensorboard
 torchvision
 fastai
-pytorch

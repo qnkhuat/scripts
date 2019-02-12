@@ -13,8 +13,8 @@ echo "sudo dpkg -i all the downloaded files"
 
 # install vim
 wget https://raw.githubusercontent.com/qnkhuat/scripts/master/setupvim.sh
-sudo chmod +x setup_vim.sh
-sudo ./setup_vim.sh
+sudo chmod +x setupvim.sh
+sudo ./setupvim.sh
 
 # install python + pip
 sudo apt-get install python3-pip python3-dev

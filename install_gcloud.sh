@@ -16,10 +16,6 @@ wget https://raw.githubusercontent.com/qnkhuat/scripts/master/setupvim.sh
 sudo chmod +x setupvim.sh
 sudo ./setupvim.sh
 
-# install python + pip
-sudo apt-get install python3-pip python3-dev
-
-
 # install anaconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh || bash
 conda create --name dev python=3.7

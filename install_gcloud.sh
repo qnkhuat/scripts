@@ -8,6 +8,7 @@ sudo apt-get install cuda
 
 echo "go to https://developer.nvidia.com/rdp/cudnn-download Download the cudnn 7.4 for cuda9.0 then scp to the server"
 echo "Install both the run time and dev"
+echo "sudo dpkg -i all the downloaded files"
 
 
 # install vim

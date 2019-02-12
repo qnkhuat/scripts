@@ -21,7 +21,7 @@ sudo apt-get install python3-pip python3-dev
 
 
 # install anaconda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh || bash
 conda create --name dev python=3.7
 conda activate dev
 wget https://gist.githubusercontent.com/qnkhuat/3294b7b68966b2d5979ba138da056d62/raw/dbbb1e6d144f46a783981844d5340b96df055fdd/requirements.txt

@@ -17,7 +17,9 @@ sudo chmod +x setupvim.sh
 sudo ./setupvim.sh
 
 # install anaconda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh || bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
 conda create --name dev python=3.7
 conda activate dev
 wget https://raw.githubusercontent.com/qnkhuat/scripts/master/requirements.txt

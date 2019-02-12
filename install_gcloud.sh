@@ -12,7 +12,7 @@ echo "sudo dpkg -i all the downloaded files"
 
 
 # install vim
-wget https://gist.githubusercontent.com/qnkhuat/1b791161db1709b429189ca29a565053/raw/22aeb214f2f5e1d5dac2a2000bc17205d1a36cd1/setup_vim.sh
+wget https://raw.githubusercontent.com/qnkhuat/scripts/master/setupvim.sh
 sudo chmod +x setup_vim.sh
 sudo ./setup_vim.sh
 

@@ -18,6 +18,7 @@ parser.add_argument('--st',help='Score threshold',type=str,default='100')
 parser.add_argument('--interval',help='Day interval for crawling',type=int,default=1)
 parser.add_argument('--days',help='How many days to the past to crawl',type=int,default=365)
 
+
 args = parser.parse_args()
 
 
@@ -32,6 +33,11 @@ now = arrow.utcnow()
 end_day = now.format('DD-MM-YY')
 start_day = arrow.get(now.timestamp - 86400*args.days).format('DD-MM-YY')
 
+print('Crawlling')
+print(f'From {start_day} to {end_day} - {args.days} days')
+print(f'Interval={args.interval} with score =>{args.st}')
+print('='*20)
+
 output_folder = pjoin(args.o,
         ('_').join([start_day,end_day,'interval',str(args.interval),'st',args.st])
         )
@@ -41,6 +47,8 @@ os.makedirs(output_folder,exist_ok=True)
 
 QUERY_URL = urljoin(args.base_url,args.t) 
 
+
+total_threads = 0
 
 for day in range(args.interval,args.days,args.interval):
     payload = {
@@ -57,22 +65,28 @@ for day in range(args.interval,args.days,args.interval):
     res = requests.get(QUERY_URL,params=payload)
 
 
-    
     data = json.loads(res.content)
-    print(res.url)
-    print(data)
-
 
     # format date
     start_day = arrow.get(now.timestamp - 86400*(day-args.interval)).format('DD-MM-YY')
     end_day= arrow.get(now.timestamp - 86400*day).format('DD-MM-YY')
 
-    file_name = ('_').join([start_day,end_day,str(len(data['data']))]) + '.json'
-    with open(pjoin(output_folder,file_name), 'w') as outfile:
-        json.dump(data, outfile)
+    print(f'Start day :{start_day}')
+    print(f'End day :{end_day}')
+    print(f"{len(data['data'])} threads found")
+    print('-'*20)
+
+    total_threads  += len(data['data'])
+
+    if len(data['data'] )>0 : 
+        file_name = ('_').join([start_day,end_day,str(len(data['data']))]) + '.json'
+        with open(pjoin(output_folder,file_name), 'w') as outfile:
+            json.dump(data, outfile)
     
 
 
+print('Crawl stopped')
+print(f'{total_threads} threads crawled')
 
 
 

@@ -39,7 +39,7 @@ print(f'Interval={args.interval} with score =>{args.st}')
 print('='*20)
 
 output_folder = pjoin(args.o,
-        ('_').join([start_day,end_day,'interval',str(args.interval),'st',args.st])
+        ('_').join([args.s,start_day,end_day,'interval',str(args.interval),'st',args.st])
         )
 os.makedirs(output_folder,exist_ok=True)
 
@@ -70,6 +70,9 @@ for day in range(args.interval,args.days,args.interval):
     # format date
     start_day = arrow.get(now.timestamp - 86400*(day-args.interval)).format('DD-MM-YY')
     end_day= arrow.get(now.timestamp - 86400*day).format('DD-MM-YY')
+    print(res.url)
+    break
+    
 
     print(f'Start day :{start_day}')
     print(f'End day :{end_day}')

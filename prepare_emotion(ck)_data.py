@@ -19,11 +19,11 @@ number_last_images = 3
 
 labels = {
     7 :"surprise",
-    1: "anger",
+    1: "angry",
     5: "happy" ,
     3:"disgust",
     4:'fear',
-    6:'sadness',
+    6:'sad',
 #     2:'contempt' # don't need
     0:'neutral',
     

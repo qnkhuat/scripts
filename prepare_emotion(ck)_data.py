@@ -12,11 +12,11 @@ Therefore in each folder, some several last images are exactly express the emoti
 After download change the name of images folder to images/ , labels folder to labels/
 Run this script
 """
+# folder name to store data
 save_dir = 'data'
 # how many last images in sequence to copy
 number_last_images = 3
-# source of 
-save_dir = 'data'
+
 labels = {
     7 :"surprise",
     1: "anger",

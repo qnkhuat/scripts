@@ -8,8 +8,9 @@ This dataset is cut from a video that each subjective are asked to behave an exa
 Each folder contains a sequence of images from when they are neutral till they express the emotion they were asked to.
 Therefore in each folder, some several last images are exactly express the emotion
 
-How to convert
+# How to convert
 After download change the name of images folder to images/ , labels folder to labels/
+Run this script
 """
 save_dir = 'data'
 # how many last images in sequence to copy

@@ -1,19 +1,20 @@
 call plug#begin()
 " Install multiple cursors"
-Plug 'terryma/vim-multiple-cursors'
-
-" Git status "
-Plug 'airblade/vim-gitgutter'
+" Plug 'terryma/vim-multiple-cursors'
 
 " Quick find "
 Plug 'kien/ctrlp.vim'
 
-" Find from all files "
+
+" File word in all files "
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-
 call plug#end()
+
+
+
+
 
 " Indent
 set tabstop=4       " The width of a TAB is set to 4.
@@ -45,24 +46,23 @@ set colorcolumn=80
 
 " Initialisation de pathogen
 call pathogen#infect()
-call pathogen#helptags()
-
+call pathogen#helptags() " ctags
 
 " Auto indent
 filetype plugin indent on
 runtime! config/**/*.vim
 
-" Auto turn on nerdtree 
+" Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open nerdtree
 map <S-p> :NERDTreeToggle<CR>
 " Show hidden files
 let NERDTreeShowHidden=1
 
-colorscheme molokai 
+colorscheme molokai
 
 
-" Key shortcut 
+" Key shortcut
 nnoremap q ^
 nnoremap e $
 vnoremap e $
@@ -90,6 +90,7 @@ map 0 :nohls<CR>
 
 
 " Auto close
+inoremap " ""<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>

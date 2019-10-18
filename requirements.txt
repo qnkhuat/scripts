@@ -10,4 +10,4 @@ scrapy
 seaborn
 tensorboard
 torchvision
-fastai
+

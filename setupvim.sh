@@ -7,6 +7,8 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vi
 mkdir ~/.vim/colors 
 curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o ~/.vim/colors/molokai.vim
 
+git clone git://github.com/vhdirk/vim-cmake.git ~/.vim/bundle/vim-cmake
+
 # install plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

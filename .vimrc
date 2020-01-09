@@ -4,17 +4,17 @@ call plug#begin()
 
 " Quick find "
 Plug 'kien/ctrlp.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 
 " File word in all files "
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
 call plug#end()
-
-
-
-
 
 " Indent
 set tabstop=4       " The width of a TAB is set to 4.
@@ -27,9 +27,13 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
+set backspace=indent,eol,start
+set linespace=5     " on MACVim it shows underscore as space
 
 set number
 
+set smartcase " smart case sensitive
+set ignorecase
 syntax on
 
 set autoindent
@@ -71,6 +75,13 @@ map J 10j
 map K 10k
 map L 10l
 map H 10h
+map 0 :nohls<CR>
+
+" Jump to definition
+map oo <C-]>
+" Generate tag file
+"map ob :r !ctags -R -f ./.git/tags .<CR>
+
 
 " hight light search
 set hls is
@@ -85,14 +96,13 @@ set ic
 " inoremap <Tab> <Esc>`^
 " inoremap <Leader><Tab> <Tab>
 
-map 0 :nohls<CR>
 
 
 
 " Auto close
 inoremap " ""<left>
 inoremap ( ()<left>
-inoremap [ []<left>
+""inoremap [ [<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O

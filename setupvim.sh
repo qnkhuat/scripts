@@ -9,6 +9,9 @@ curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim 
 
 git clone git://github.com/vhdirk/vim-cmake.git ~/.vim/bundle/vim-cmake
 
+# auto parenthasis
+git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
+
 # install plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

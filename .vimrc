@@ -17,6 +17,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
+" Git blame
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
 " Indent
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that

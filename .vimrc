@@ -5,6 +5,7 @@ call plug#begin()
 " Quick find "
 Plug 'kien/ctrlp.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'zivyangll/git-blame.vim'
 
 
 " File word in all files "

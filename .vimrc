@@ -18,7 +18,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
 
 " Git blame
-nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+autocmd CursorMoved * :call gitblame#echo()
 
 " Indent
 set tabstop=4       " The width of a TAB is set to 4.

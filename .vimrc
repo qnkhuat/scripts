@@ -13,12 +13,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
+
+Plugin 'jiangmiao/auto-pairs'
+
 " Git blame
-autocmd CursorMoved * :call gitblame#echo()
+" autocmd CursorMoved * :call gitblame#echo()
 
 " Indent
 set tabstop=4       " The width of a TAB is set to 4.
@@ -67,7 +70,6 @@ map <S-p> :NERDTreeToggle<CR>
 " Show hidden files
 let NERDTreeShowHidden=1
 
-colorscheme molokai
 
 
 " Key shortcut
@@ -103,14 +105,13 @@ set ic
 
 
 
-" Auto close
-inoremap " ""<left>
-inoremap ( ()<left>
-""inoremap [ [<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
+""" Auto close
+""inoremap " ""<left>
+""inoremap ( ()<left>
+""""inoremap [ [<left>
+""inoremap { {}<left>
+""inoremap {<CR> {<CR>}<ESC>O
+""inoremap {;<CR> {<CR>};<ESC>O
 
 
 " Setup quick find files

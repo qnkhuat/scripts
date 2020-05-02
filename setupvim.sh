@@ -21,6 +21,9 @@ git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 # install ctags
 git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle/vim-gutentags
 
+# install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # setup vimrc
 curl https://raw.githubusercontent.com/qnkhuat/scripts/master/.vimrc -o ~/.vimrc
 

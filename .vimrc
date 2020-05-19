@@ -17,8 +17,10 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
+call vundle#end()
 
 " Git blame
 " autocmd CursorMoved * :call gitblame#echo()
@@ -32,6 +34,7 @@ set tabstop=4       " The width of a TAB is set to 4.
 set shiftwidth=4    " Indents will have a width of 4
 
 set softtabstop=4   " Sets the number of columns for a TAB
+set smartindent
 
 set expandtab       " Expand TABs to spaces
 set backspace=indent,eol,start
@@ -82,6 +85,7 @@ map K 10k
 map L 10l
 map H 10h
 map 0 :nohls<CR>
+map t :W<CR> " open tab control
 
 " Jump to definition
 map oo <C-]>
@@ -101,17 +105,6 @@ set ic
 " cnoremap <Tab> <C-C><Esc>
 " inoremap <Tab> <Esc>`^
 " inoremap <Leader><Tab> <Tab>
-
-
-
-
-""" Auto close
-""inoremap " ""<left>
-""inoremap ( ()<left>
-""""inoremap [ [<left>
-""inoremap { {}<left>
-""inoremap {<CR> {<CR>}<ESC>O
-""inoremap {;<CR> {<CR>};<ESC>O
 
 
 " Setup quick find files

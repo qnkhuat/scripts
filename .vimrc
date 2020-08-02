@@ -80,6 +80,7 @@ nnoremap q ^
 nnoremap e $
 vnoremap e $
 vnoremap q ^
+map C :set colorcolumn=<CR>
 map J 10j
 map K 10k
 map L 10l

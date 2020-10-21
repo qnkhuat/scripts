@@ -41,5 +41,6 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    brew install neovim
 fi
 
+# link vim config to nvim
 mkdir ~/.config/nvim/
 curl https://raw.githubusercontent.com/qnkhuat/scripts/master/vim.init -o ~/.config/nvim/

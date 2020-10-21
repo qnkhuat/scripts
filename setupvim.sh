@@ -34,8 +34,12 @@ unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
    # ubuntu 
    apt-get install silversearcher-ag ctags
+   apt-get instal neovim
 elif [[ "$unamestr" == 'Darwin' ]]; then
    # macosx
-   
    brew install the_silver_searcher ctags
+   brew install neovim
 fi
+
+mkdir ~/.config/nvim/
+curl https://raw.githubusercontent.com/qnkhuat/scripts/master/vim.init -o ~/.config/nvim/

@@ -2,14 +2,12 @@ call plug#begin()
 " Install multiple cursors"
 
 " Quick find "
-Plug 'kien/ctrlp.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'zivyangll/git-blame.vim'
 Plug 'preservim/nerdtree'
 
 " File word in all files "
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " Markdown preview
@@ -19,7 +17,6 @@ call plug#end()
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'othree/yajs.vim'
 call vundle#end()
 
 " Git blame
@@ -83,6 +80,9 @@ map H 10h
 map 0 :nohls<CR>
 map t :W<CR> " open tab control
 
+" config for jsx prettier
+"let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
 " Jump to definition
 map oo <C-]>
 " Generate tag file
@@ -94,5 +94,6 @@ set hls is
 " Able to search even capital or lower
 set ic
 
-" Setup quick find files
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" PLUGIN: FZF
+nnoremap <c-p> :Files<CR>
+nnoremap <c-f> :Ag<CR>

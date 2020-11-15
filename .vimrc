@@ -17,9 +17,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
-set tabstop=8 softtabstop=0 shiftwidth=4 smarttab smartindent
+
+set tabstop=8 softtabstop=0 shiftwidth=4 smarttab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
-set smartindent
 
 set backspace=indent,eol,start
 set linespace=5 " on MACVim it shows underscore as space
@@ -67,7 +67,7 @@ map t :W<CR> " open tab control
 "let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 " Jump to definition
-map oo <C-]>
+" map oo <C-]>
 " Generate tag file
 "map ob :r !ctags -R -f ./.git/tags .<CR>
 
@@ -86,5 +86,11 @@ function! FZFOpen(command_str)
   exe 'normal! ' . a:command_str . "\<cr>"
 endfunction
 
+" Mapping for file file and serach code
 nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
+
+
+" Compile and run cpp code
+nnoremap <C-c> :!clear && g++ -o  %:r.out % -std=c++11<Enter>
+nnoremap <C-x> :!clear && g++ -o  %:r.out % -std=c++11 && ./%:r.out<Enter>

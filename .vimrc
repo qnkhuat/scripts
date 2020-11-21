@@ -19,7 +19,7 @@ Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 set tabstop=8 softtabstop=0 shiftwidth=4 smarttab
-autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
+autocmd Filetype javascript,cpp setlocal ts=2 sw=2 sts=2
 
 set backspace=indent,eol,start
 set linespace=5 " on MACVim it shows underscore as space
@@ -92,5 +92,5 @@ nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 
 " Compile and run cpp code
-nnoremap <C-c> :!clear && g++ -o  %:r.out % -std=c++11<Enter>
-nnoremap <C-x> :!clear && g++ -o  %:r.out % -std=c++11 && ./%:r.out<Enter>
+nnoremap <C-c> :!clear && g++ -o  '%:r.out' '%' -std=c++11<Enter>
+nnoremap <C-x> :!clear && g++ -o  '%:r.out' '%' -std=c++11 && './%:r.out'<Enter>

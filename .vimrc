@@ -26,11 +26,10 @@ set linespace=5 " on MACVim it shows underscore as space
 
 set number
 
-set smartcase " smart case sensitive
-set ignorecase
+set ignorecase smartcase " smart case sensitive
 syntax on
 
-set autoindent
+set autoindent smartindent
 
 set cursorline
 

@@ -50,17 +50,21 @@ map <S-p> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Key shortcut
-nnoremap q ^
-nnoremap e $
-vnoremap e $
-vnoremap q ^
-map C :set colorcolumn=<CR>
-map J 10j
-map K 10k
-map L 10l
-map H 10h
-map 0 :nohls<CR>
-map t :W<CR> " open tab control
+" noremap is non-recursive means it will be execute rightaway
+noremap q ^
+noremap e $
+noremap C :set colorcolumn=<CR>
+noremap J 10j
+noremap K 10k
+noremap L 10l
+noremap H 10h
+noremap 0 :nohls<CR>
+noremap t :W<CR> " open tab control
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " config for jsx prettier
 "let g:vim_jsx_pretty_colorful_config = 1 " default 0

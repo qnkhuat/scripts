@@ -30,13 +30,14 @@ set ignorecase smartcase " smart case sensitive
 syntax on
 
 set autoindent smartindent
-
+set nocompatible
 set cursorline
 
-set nocompatible
-
 " Python limit chars line
-set colorcolumn=80
+" set colorcolumn=80
+
+" Enable mouse scrolling
+set mouse=a
 
 " Auto indent
 filetype plugin indent on
@@ -65,6 +66,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-,> <C-w>10<
+nnoremap <C-.> <C-w>10>
 
 " config for jsx prettier
 "let g:vim_jsx_pretty_colorful_config = 1 " default 0

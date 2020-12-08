@@ -62,12 +62,13 @@ noremap H 10h
 noremap 0 :nohls<CR>
 noremap t :W<CR> " open tab control
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-,> <C-w>10<
-nnoremap <C-.> <C-w>10>
+" mapping to swith between view points
+noremap <C-k> <C-w>w
+noremap <C-j> <C-w>h
+noremap <C-,> <C-w>10<
+noremap <C-.> <C-w>10>
+let g:NERDTreeMapJumpNextSibling = '<Nop>'
+let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
 " config for jsx prettier
 "let g:vim_jsx_pretty_colorful_config = 1 " default 0

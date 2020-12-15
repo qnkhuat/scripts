@@ -18,8 +18,8 @@ call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
-set tabstop=8 softtabstop=0 shiftwidth=4 smarttab
-autocmd Filetype javascript,cpp setlocal ts=2 sw=2 sts=2
+set tabstop=8 softtabstop=0 shiftwidth=4 smarttab 
+autocmd Filetype javascript,cpp,c setlocal ts=2 sw=2 sts=2
 
 set backspace=indent,eol,start
 set linespace=5 " on MACVim it shows underscore as space
@@ -32,6 +32,8 @@ syntax on
 set autoindent smartindent
 set nocompatible
 set cursorline
+set laststatus=2
+set statusline=%f "tail of the filename
 
 " Python limit chars line
 " set colorcolumn=80
@@ -60,11 +62,11 @@ noremap K 10k
 noremap L 10l
 noremap H 10h
 noremap 0 :nohls<CR>
-noremap t :W<CR> " open tab control
+noremap T :W<CR> " open tab control
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w
-noremap <C-j> <C-w>h
+noremap <C-j> <C-w>W
 noremap <C-,> <C-w>10<
 noremap <C-.> <C-w>10>
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
@@ -99,5 +101,6 @@ nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 
 " Compile and run cpp code
-nnoremap <C-c> :!clear && g++ -o  '%:r.out' '%' -std=c++11<Enter>
-nnoremap <C-x> :!clear && g++ -o  '%:r.out' '%' -std=c++11 && './%:r.out'<Enter>
+nnoremap <C-c> :!clear && g++ -o  '%:r.out' '%' -std=c++17<Enter>
+nnoremap <C-x> :!clear && g++ -o  '%:r.out' '%' -std=c++17 && './%:r.out'<Enter>
+nnoremap <C-b> :!clear && ./run.sh<Enter>

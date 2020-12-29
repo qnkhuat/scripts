@@ -9,37 +9,19 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
-" Markdown preview
-
 call plug#end()
 
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
-set tabstop=8 softtabstop=0 shiftwidth=4 smarttab 
+let g:AutoPairs =  {'<<':'', '<':'>'}
+
+" Set everything
+set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab 
 autocmd Filetype javascript,cpp,c setlocal ts=2 sw=2 sts=2
-
-set backspace=indent,eol,start
-set linespace=5 " on MACVim it shows underscore as space
-
-set number
-
-set ignorecase smartcase " smart case sensitive
-syntax on
-
-set autoindent smartindent
-set nocompatible
-set cursorline
-set laststatus=2
-set statusline=%f "tail of the filename
-
-" Python limit chars line
-" set colorcolumn=80
-
-" Enable mouse scrolling
-set mouse=a
 
 " Auto indent
 filetype plugin indent on
@@ -69,22 +51,10 @@ noremap <C-k> <C-w>w
 noremap <C-j> <C-w>W
 noremap <C-,> <C-w>10<
 noremap <C-.> <C-w>10>
-let g:NERDTreeMapJumpNextSibling = '<Nop>'
-let g:NERDTreeMapJumpPrevSibling = '<Nop>'
+noremap t :NERDTreeFind<CR> " Open file in Tree
+" let g:NERDTreeMapJumpNextSibling = '<Nop>'
+" let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
-" config for jsx prettier
-"let g:vim_jsx_pretty_colorful_config = 1 " default 0
-
-" Jump to definition
-" map oo <C-]>
-" Generate tag file
-"map ob :r !ctags -R -f ./.git/tags .<CR>
-
-
-" hight light search
-set hls is
-" Able to search even capital or lower
-set ic
 
 " PLUGIN: FZF
 " helper function to prevent Fzf to open file in nerdtree buffer
@@ -99,8 +69,6 @@ endfunction
 nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
-
 " Compile and run cpp code
-nnoremap <C-c> :!clear && g++ -o  '%:r.out' '%' -std=c++17<Enter>
-nnoremap <C-x> :!clear && g++ -o  '%:r.out' '%' -std=c++17 && './%:r.out'<Enter>
+nnoremap <C-x> :!clear && g++ -g '%' -o '%:r.out' -std=c++17 && './%:r.out'<Enter>
 nnoremap <C-b> :!clear && ./run.sh<Enter>

@@ -49,8 +49,8 @@ noremap T :W<CR> " open tab control
 " mapping to swith between view points
 noremap <C-k> <C-w>w
 noremap <C-j> <C-w>W
-noremap <C-,> <C-w>10<
-noremap <C-.> <C-w>10>
+noremap <C-h> <C-w>10<
+noremap <C-l> <C-w>10>
 noremap t :NERDTreeFind<CR> " Open file in Tree
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'

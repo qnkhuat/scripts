@@ -1,7 +1,7 @@
-call plug#begin()" Install multiple cursors"
+call plug#begin()
 
 " Quick find "
-Plug 'zivyangll/git-blame.vim'
+"Plug 'zivyangll/git-blame.vim'
 Plug 'preservim/nerdtree'
 
 " File word in all files "
@@ -17,7 +17,7 @@ call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
-let g:AutoPairs =  {'<<':'', '<':'>'}
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`", '<<':'', '<':'>'}
 
 " Set everything
 set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab 
@@ -52,7 +52,7 @@ noremap <C-j> <C-w>W
 noremap <C-,> <C-w>10<
 noremap <C-.> <C-w>10>
 noremap t :NERDTreeFind<CR> " Open file in Tree
-let g:NERDTreeMapJumpNextSibling = '<Nop>' " make moving between panes work
+let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
 

@@ -52,8 +52,8 @@ noremap <C-j> <C-w>W
 noremap <C-,> <C-w>10<
 noremap <C-.> <C-w>10>
 noremap t :NERDTreeFind<CR> " Open file in Tree
-" let g:NERDTreeMapJumpNextSibling = '<Nop>'
-" let g:NERDTreeMapJumpPrevSibling = '<Nop>'
+let g:NERDTreeMapJumpNextSibling = '<Nop>' " make moving between panes work
+let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
 
 " PLUGIN: FZF

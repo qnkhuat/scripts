@@ -54,6 +54,7 @@ noremap <C-l> <C-w>10>
 noremap t :NERDTreeFind<CR> " Open file in Tree
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
+set winfixwidth winfixheight " prevent nerdtree from resize panes when toggle
 
 
 " PLUGIN: FZF

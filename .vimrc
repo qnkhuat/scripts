@@ -17,10 +17,10 @@ call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`", '<<':'', '<':'>'}
+"let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
 
 " Set everything
-set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab 
+set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab
 autocmd Filetype javascript,cpp,c setlocal ts=2 sw=2 sts=2
 
 " Auto indent
@@ -44,7 +44,7 @@ noremap K 10k
 noremap L 10l
 noremap H 10h
 noremap 0 :nohls<CR>
-noremap T :W<CR> " open tab control
+noremap T :W<CR>
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w
@@ -71,5 +71,10 @@ nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 " Compile and run cpp code
-nnoremap <C-x> :!clear && g++ -g '%' -o '%:r.out' -std=c++17 && './%:r.out'<Enter>
+nnoremap <C-x> :!clear && clang++ -g '%' -o '%:r.out' -std=c++17 && './%:r.out'<Enter>
 nnoremap <C-b> :!clear && ./run.sh<Enter>
+
+
+" fix Tmux
+set background=dark
+set t_Co=256

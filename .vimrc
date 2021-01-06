@@ -83,3 +83,5 @@ if &term =~ "screen"
     exec "set t_PS=\e[200~"                                              
     exec "set t_PE=\e[201~"                                              
 endif
+
+"Test auto backup

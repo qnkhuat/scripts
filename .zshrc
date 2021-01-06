@@ -144,7 +144,9 @@ alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias code="code-insiders"
 alias t='vim /Users/earther/fun/mds/thoughts.md'
 alias g="g -n 6"
+alias backup="~/fun/scripts/backup.sh"
 
 
 source /Users/earther/Desktop/Works/Vantix/autopilot/open-sources/openpilot/tools/openpilot_env.sh
+
 

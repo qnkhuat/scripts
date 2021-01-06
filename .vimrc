@@ -1,13 +1,10 @@
 call plug#begin()
 
-" Quick find "
-"Plug 'zivyangll/git-blame.vim'
 Plug 'preservim/nerdtree'
 
 " File word in all files "
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 
@@ -17,10 +14,10 @@ call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
-"let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
 
 " Set everything
-set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab
+set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab 
 autocmd Filetype javascript,cpp,c setlocal ts=2 sw=2 sts=2
 
 " Auto indent
@@ -78,3 +75,11 @@ nnoremap <C-b> :!clear && ./run.sh<Enter>
 " fix Tmux
 set background=dark
 set t_Co=256
+
+
+if &term =~ "screen"                                                   
+    let &t_BE = "\e[?2004h"                                              
+    let &t_BD = "\e[?2004l"                                              
+    exec "set t_PS=\e[200~"                                              
+    exec "set t_PE=\e[201~"                                              
+endif

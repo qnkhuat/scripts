@@ -130,23 +130,18 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 
 # Setup llvm
-#export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang ARM-native
+#export PATH="/usr/bin:$PATH" # original clang
+#export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang homebrew ARM-native
 export PATH="/usr/local/opt/llvm/bin:$PATH" # intel clang
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # alias
-alias g='googler -n 9'
+alias g='googler -n 6'
 alias pip='pip3'
 alias python='python3'
 alias intel="arch -x86_64"
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias code="code-insiders"
 alias t='vim /Users/earther/fun/mds/thoughts.md'
-alias g="g -n 6"
 alias backup="~/fun/scripts/backup.sh"
-
-
-source /Users/earther/Desktop/Works/Vantix/autopilot/open-sources/openpilot/tools/openpilot_env.sh
-
-

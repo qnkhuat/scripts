@@ -17,12 +17,13 @@ call vundle#end()
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
 
 " Set everything
-set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5  tabstop=8 softtabstop=0 shiftwidth=4 smarttab expandtab
-autocmd Filetype javascript,cpp,c setlocal ts=2 sw=2 sts=2
+set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab
+autocmd Filetype javascript,cpp,c setlocal tabstop=2 shiftwidth=2
+autocmd Filetype python setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 " Auto indent
-filetype plugin indent on
-runtime! config/**/*.vim
+"filetype plugin indent on
+"runtime! config/**/*.vim
 
 " Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

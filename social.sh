@@ -4,9 +4,9 @@ if [ $EUID != 0 ]; then
 fi
 if [ $# -eq 1 ] 
 then
-	sed -i '' '/^#0.0.0.0/s/^#//g' "/etc/hosts" # uncomment
+	sed -i '' '/^0.0.0.0/s/^/#/g' "/etc/hosts" 
 	echo "unlocked"
 else
-	sed -i '' '/^0.0.0.0/s/^/#/g' "/etc/hosts" # comment
+	sed -i '' '/^#0.0.0.0/s/^#//g' "/etc/hosts" 
 	echo "locked"
 fi

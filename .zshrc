@@ -130,11 +130,14 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 
 # Setup llvm
-#export PATH="/usr/bin:$PATH" # original clang
+export PATH="/usr/bin:$PATH" # original clang
 #export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang homebrew ARM-native
-export PATH="/usr/local/opt/llvm/bin:$PATH" # intel clang
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+#export PATH="/usr/local/opt/llvm/bin:$PATH" # intel clang
+#export LDFLAGS="-L/usr/local/opt/llvm/lib"
+#export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export GOPATH="$HOME/go" # go home package
 
 # alias
 alias g='googler -n 6'
@@ -145,3 +148,5 @@ alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias code="code-insiders"
 alias t='vim /Users/earther/fun/mds/thoughts.md'
 alias backup="~/fun/scripts/backup.sh"
+alias social="~/fun/scripts/social.sh"
+

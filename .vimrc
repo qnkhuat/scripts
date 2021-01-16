@@ -17,8 +17,8 @@ call vundle#end()
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
 
 " Set everything
-set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab
-autocmd Filetype javascript,cpp,c setlocal tabstop=2 shiftwidth=2
+set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab smarttab
+autocmd Filetype javascript,cpp,c,go setlocal tabstop=2 shiftwidth=2
 autocmd Filetype python setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 " Auto indent

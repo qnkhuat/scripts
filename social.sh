@@ -1,15 +1,14 @@
+# a simple script to block social media sites
 if [ $EUID != 0 ]; then
 	sudo "$0" "$@"
 	exit $?
 fi
-text="0.0.0.0 facebook.com instagram.com youtube.com www.facebook.com www.instagram.com www.youtube.com"
+text="0.0.0.0 facebook.com www.facebook.com instagram.com www.instagram.com youtube.com www.youtube.com twitter.com www.twitter.com reddit.com www.reddit.com"
 if [ $# -eq 1 ] 
 then
-	#sed -i '' '/^0.0.0.0/s/^/#/g' "/etc/hosts" 
 	sed -i '' -e "/$text/d" /etc/hosts
-	echo "unlocked"
+	echo "unlocked. Be quick"
 else
-	#sed -i '' '/^#0.0.0.0/s/^#//g' "/etc/hosts" 
 	echo $text >> /etc/hosts
-	echo "locked"
+	echo "locked. I'm proud of you"
 fi

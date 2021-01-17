@@ -37,12 +37,15 @@ let NERDTreeShowHidden=1
 noremap q ^
 noremap e $
 noremap C :set colorcolumn=<CR>
+execute "set <M-k>=[k"
 noremap J 10j
 noremap K 10k
 noremap L 10l
 noremap H 10h
 noremap 0 :nohls<CR>
 noremap T :W<CR>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w

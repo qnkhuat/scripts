@@ -20,5 +20,5 @@ then
 	echo "unlocked. Be quick ಠ_ಠ"
 else # if there are arguments => unlock
 	echo $site>> /etc/hosts
-	echo "locked. I'm proud of you  (ง'̀-'́)ง"
+	echo "locked. I'm proud of you (ง'̀-'́)ง"
 fi

@@ -1,18 +1,18 @@
 # A simple script to block social media sites
-# usage:
-# type: `social` => lock all sites listed in &site below
+# Usage:
+# type: `social` => lock all sites listed in $site below
 # type: `social [whatever]` => unlock sites
 # To add a site in the list: add `[site].com` and `www.[site].com` to the $site
 # To call `social` anywhere: add `alias social="absolute path to this script"` in your bash.rc or zsh.rc
 
-# ask for sudo since the /etc/hosts is system file
+# ask for sudo bc /etc/hosts is system file
 if [ $EUID != 0 ]; then
 	sudo "$0" "$@"
 	exit $?
 fi
 
 ### LIST OF SITES TO BLOCK ###
-site="0.0.0.0 facebook.com www.facebook.com instagram.com www.instagram.com youtube.com www.youtube.com twitter.com www.twitter.com reddit.com www.reddit.com tinder.com www.tinder.com"
+site="0.0.0.0 facebook.com www.facebook.com instagram.com www.instagram.com youtube.com www.youtube.com twitter.com www.twitter.com reddit.com www.reddit.com tinder.com www.tinder.com messenger.com www.messenger.com"
 
 if [ $# -eq 1 ] # no arguments => lock
 then

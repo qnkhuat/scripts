@@ -99,9 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-export PATH=/opt/homebrew/bin:$PATH
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # >>> conda initialize >>>
@@ -119,8 +116,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing.\nWrite a custom fore in python!" | cowsay -n
+echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing.\nSmash that hashlife!" | cowsay -n
 motivate
 
 # remove underline from zsh highlight
@@ -129,6 +125,7 @@ ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 
+export PATH=$PATH:/opt/homebrew/bin
 # Setup llvm
 export PATH="/usr/bin:$PATH" # original clang
 #export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang homebrew ARM-native
@@ -146,7 +143,7 @@ alias python='python3'
 alias intel="arch -x86_64"
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias code="code-insiders"
-alias t='vim /Users/earther/fun/mds/thoughts.md'
+alias t='vim ~/fun/mds/thoughts.md'
 alias backup="~/fun/scripts/backup.sh"
 alias social="~/fun/scripts/social.sh"
 

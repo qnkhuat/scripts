@@ -72,7 +72,7 @@ nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 " Compile and run cpp code
-nnoremap <C-x> :!clear && clang++ -g '%' -o '%:r.out' -std=c++17 && './%:r.out'<Enter>
+nnoremap <C-x> :!clear && clang -g '%' -o '%:r.out' && './%:r.out'<Enter>
 nnoremap <C-b> :!clear && ./run.sh<Enter>
 
 

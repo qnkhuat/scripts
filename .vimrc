@@ -3,8 +3,8 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 
 " File word in all files "
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -46,6 +46,9 @@ noremap 0 :nohls<CR>
 noremap T :W<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+" delete without yanking
+nnoremap d "_d
+vnoremap d "_d
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w
@@ -70,9 +73,8 @@ endfunction
 " Mapping for file file and serach code
 nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
-
 " Compile and run cpp code
-nnoremap <C-x> :!clear && clang -g '%' -o '%:r.out' && './%:r.out'<Enter>
+nnoremap <C-x> :!clear && clang++ -g '%' -o '%:r.out' && './%:r.out'<Enter>
 nnoremap <C-b> :!clear && ./run.sh<Enter>
 
 

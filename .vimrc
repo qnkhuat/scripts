@@ -1,6 +1,7 @@
 call plug#begin()
 
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " File word in all files "
 Plug 'junegunn/fzf.vim'

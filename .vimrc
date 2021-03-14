@@ -6,6 +6,8 @@ Plug 'preservim/nerdtree' |
 " File word in all files "
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
@@ -15,16 +17,20 @@ call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
+"let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
 
 " Set everything
 set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab smarttab
 autocmd Filetype javascript,cpp,c,go setlocal tabstop=2 shiftwidth=2
 autocmd Filetype python setlocal tabstop=4 shiftwidth=4 noexpandtab
+let g:go_highlight_trailing_whitespace_error=0
+let g:go_doc_keywordprg_enabled = 0
+let g:go_gopls_enabled = 0
 
 " Auto indent
-"filetype plugin indent on
-"runtime! config/**/*.vim
+filetype plugin indent on
+syntax on
+runtime! config/**/*.vim
 
 " Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -48,18 +54,23 @@ noremap T :W<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 " delete without yanking
-nnoremap d "_d
-vnoremap d "_d
+" nnoremap d "_d
+" vnoremap d "_d
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w
 noremap <C-j> <C-w>W
 noremap <C-h> <C-w>10<
 noremap <C-l> <C-w>10>
-noremap t :NERDTreeFind<CR> " Open file in Tree
+" Open file in Tree
+noremap t :NERDTreeFind<CR>
+" Dash search for the word under the cursor
+noremap F :Dash<CR>
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
-set winfixwidth winfixheight " prevent nerdtree from resize panes when toggle
+ " prevent nerdtree from resize panes when toggle
+set winfixwidth winfixheight
+set autoread
 
 
 " PLUGIN: FZF
@@ -74,15 +85,20 @@ endfunction
 " Mapping for file file and serach code
 nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
+
 " Compile and run cpp code
 nnoremap <C-x> :!clear && clang++ -g '%' -o '%:r.out' && './%:r.out'<Enter>
 nnoremap <C-b> :!clear && ./run.sh<Enter>
 
+" folding
+set fdm=manual
 
 " fix Tmux
 set background=dark
 set t_Co=256
 
+" Jack syntax as Java
+au BufReadPost *.jack set syntax=java
 
 if &term =~ "screen"                                                   
     let &t_BE = "\e[?2004h"                                              

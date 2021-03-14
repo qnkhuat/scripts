@@ -126,7 +126,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # /opt/homebrew is native brew
 # /usr/local/homebrew is x86 brew
-export PATH=$PATH:/opt/homebrew/bin
+export PATH=/opt/homebrew/bin:$PATH
 # Setup llvm
 #export PATH="/usr/bin:$PATH" # original clang
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang homebrew ARM-native
@@ -149,5 +149,5 @@ alias t='vim ~/fun/mds/thoughts.md'
 alias backup="~/fun/scripts/backup.sh"
 alias social="~/fun/scripts/social.sh"
 
-motivate
 echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing.\nSmash that hashlife!" | cowsay -n
+motivate

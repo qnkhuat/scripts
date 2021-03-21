@@ -137,7 +137,9 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export GOPATH="$HOME/go" # go home package
 
+
 # alias
+alias ghc="stack ghc"
 alias g='googler -n 6'
 alias pip='pip3'
 alias python='python3'

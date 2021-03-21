@@ -1,13 +1,10 @@
 call plug#begin()
 
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdtree'
 
 " File word in all files "
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
@@ -16,8 +13,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
-
-"let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
 
 " Set everything
 set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab smarttab
@@ -32,19 +27,12 @@ filetype plugin indent on
 syntax on
 runtime! config/**/*.vim
 
-" Auto turn on nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Open nerdtree
-map <S-p> :NERDTreeToggle<CR>
-" Show hidden files
-let NERDTreeShowHidden=1
-
 " Key shortcut
 " noremap is non-recursive means it will be execute rightaway
 noremap q ^
 noremap e $
 noremap C :set colorcolumn=<CR>
-execute "set <M-k>=[k"
+" execute "set <M-k>=[k"
 noremap J 10j
 noremap K 10k
 noremap L 10l
@@ -53,19 +41,23 @@ noremap 0 :nohls<CR>
 noremap T :W<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
-" delete without yanking
-" nnoremap d "_d
-" vnoremap d "_d
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w
 noremap <C-j> <C-w>W
 noremap <C-h> <C-w>10<
 noremap <C-l> <C-w>10>
+
+" PLUGIN : NERDTREE
+" Auto turn on nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Open nerdtree
+map <S-p> :NERDTreeToggle<CR>
+" Show hidden files
+let NERDTreeShowHidden=1
+
 " Open file in Tree
 noremap t :NERDTreeFind<CR>
-" Dash search for the word under the cursor
-noremap F :Dash<CR>
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
  " prevent nerdtree from resize panes when toggle
@@ -87,7 +79,6 @@ nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 " Compile and run cpp code
-nnoremap <C-x> :!clear && clang++ -g '%' -o '%:r.out' && './%:r.out'<Enter>
 nnoremap <C-b> :!clear && ./run.sh<Enter>
 
 " folding
@@ -96,9 +87,6 @@ set fdm=manual
 " fix Tmux
 set background=dark
 set t_Co=256
-
-" Jack syntax as Java
-au BufReadPost *.jack set syntax=java
 
 if &term =~ "screen"                                                   
     let &t_BE = "\e[?2004h"                                              

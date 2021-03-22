@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 
 " File word in all files "
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -15,9 +16,10 @@ Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 " Set everything
-set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab smarttab
+set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 smarttab noexpandtab
 autocmd Filetype javascript,cpp,c,go setlocal tabstop=2 shiftwidth=2
 autocmd Filetype python setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd Filetype haskell expandtab tabstop=8 shiftwidth=8
 let g:go_highlight_trailing_whitespace_error=0
 let g:go_doc_keywordprg_enabled = 0
 let g:go_gopls_enabled = 0

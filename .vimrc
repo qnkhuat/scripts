@@ -1,3 +1,5 @@
+set nocompatible
+filetype off
 call plug#begin()
 
 Plug 'preservim/nerdtree'
@@ -16,25 +18,27 @@ Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 " Set everything
-set autoindent smartindent number nocompatible cursorline ignorecase smartcase mouse=a hls is ic backspace=indent,eol,start linespace=5 tabstop=4 softtabstop=0 shiftwidth=4 smarttab noexpandtab
-autocmd Filetype javascript,cpp,c,go setlocal tabstop=2 shiftwidth=2
-autocmd Filetype python setlocal tabstop=4 shiftwidth=4 noexpandtab
-autocmd Filetype haskell expandtab tabstop=8 shiftwidth=8
-let g:go_highlight_trailing_whitespace_error=0
-let g:go_doc_keywordprg_enabled = 0
-let g:go_gopls_enabled = 0
+syntax on
+set cursorline number ruler
+
+set mouse=a hls is ic 
+set backspace=indent,eol,start 
+set linespace=5 " better display on MacVim
+set smartcase ignorecase
+set autoindent             " Indent according to previous line.
+set expandtab              " Use spaces instead of tabs.
+set softtabstop=4         " Tab key indents by 4 spaces.
+set shiftwidth=4         " >> indents by 4 spaces.
+set shiftround             " >> indents to next multiple of 'shiftwidth'.
 
 " Auto indent
 filetype plugin indent on
-syntax on
 runtime! config/**/*.vim
 
 " Key shortcut
 " noremap is non-recursive means it will be execute rightaway
 noremap q ^
 noremap e $
-noremap C :set colorcolumn=<CR>
-" execute "set <M-k>=[k"
 noremap J 10j
 noremap K 10k
 noremap L 10l
@@ -82,9 +86,6 @@ nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 " Compile and run cpp code
 nnoremap <C-b> :!clear && ./run.sh<Enter>
-
-" folding
-set fdm=manual
 
 " fix Tmux
 set background=dark

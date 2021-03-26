@@ -103,14 +103,14 @@ source $ZSH/oh-my-zsh.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/earther/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/earther/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/earther/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/earther/miniforge3/etc/profile.d/conda.sh"
+    if [ -f "/Users/earther/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/earther/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/earther/miniforge3/bin:$PATH"
+        export PATH="/Users/earther/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -138,7 +138,7 @@ export GOPATH="$HOME/go" # go home package
 
 
 # alias
-alias ghc="stack ghc"
+#alias ghc="stack ghc"
 alias g='googler -n 6'
 alias pip='pip3'
 alias python='python3'
@@ -155,3 +155,4 @@ motivate
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "/Users/earther/.ghcup/env" ] && source "/Users/earther/.ghcup/env" # ghcup-env

@@ -8,6 +8,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'itchyny/vim-haskell-indent'
 
 call plug#end()
 
@@ -25,6 +26,7 @@ set mouse=a hls is ic
 set backspace=indent,eol,start 
 set linespace=5 " better display on MacVim
 set smartcase ignorecase
+set smartindent " auto indent at new line
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
 set softtabstop=4         " Tab key indents by 4 spaces.

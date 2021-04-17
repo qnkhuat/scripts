@@ -7,8 +7,10 @@ Plug 'preservim/nerdtree'
 " File word in all files "
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'itchyny/vim-haskell-indent'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
+Plug 'itchyny/vim-haskell-indent', {'for': 'haskell'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'maxmellon/vim-jsx-pretty', {'for': 'javascript'}
 
 call plug#end()
 
@@ -20,8 +22,7 @@ call vundle#end()
 
 " Set everything
 syntax on
-set cursorline number ruler
-
+set cursorline number ruler wrap
 set mouse=a hls is ic 
 set backspace=indent,eol,start 
 set linespace=5 " better display on MacVim
@@ -71,6 +72,8 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
  " prevent nerdtree from resize panes when toggle
 set winfixwidth winfixheight
 set autoread
+
+let g:closetag_html_style=1
 
 
 " PLUGIN: FZF

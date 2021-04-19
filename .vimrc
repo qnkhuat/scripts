@@ -50,6 +50,7 @@ noremap 0 :nohls<CR>
 noremap T :W<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+nmap N :set invnumber<CR>
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w

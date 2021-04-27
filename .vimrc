@@ -11,7 +11,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 Plug 'itchyny/vim-haskell-indent', {'for': 'haskell'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'maxmellon/vim-jsx-pretty', {'for': 'javascript'}
-
+Plug 'leafgarland/typescript-vim', {'for': 'javascript'}
+"Plug 'peitalin/vim-jsx-typescript', {'for': 'javascript'}
 call plug#end()
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -50,17 +51,18 @@ noremap 0 :nohls<CR>
 noremap T :W<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
-nmap N :set invnumber<CR>
+nmap 9 :set invnumber<CR>
 
 " mapping to swith between view points
 noremap <C-k> <C-w>w
 noremap <C-j> <C-w>W
-noremap <C-h> <C-w>10<
-noremap <C-l> <C-w>10>
+noremap <C-h> <C-w>10>
+noremap <C-l> <C-w>10<
 
 " PLUGIN : NERDTREE
 " Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact" set tsx file as js file
 " Open nerdtree
 map <S-p> :NERDTreeToggle<CR>
 " Show hidden files

@@ -132,9 +132,11 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang homebrew ARM-nati
 #export PATH="/usr/local/opt/llvm/bin:$PATH" # intel clang
 #export LDFLAGS="-L/usr/local/opt/llvm/lib"
 #export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export PATH="$PATH:/Users/earther/flutter/bin"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export GOPATH="$HOME/go" # go home package
+
 
 
 # alias
@@ -149,7 +151,7 @@ alias code="code-insiders"
 alias t='vim ~/fun/mds/thoughts.md'
 alias backup="~/fun/scripts/backup.sh"
 alias social="~/fun/scripts/social.sh"
-alias vim="nvim"
+#alias vim="nvim"
 
 echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing.\nSmash that hashlife!" | cowsay -n
 motivate

@@ -3,16 +3,17 @@ filetype off
 call plug#begin()
 
 Plug 'preservim/nerdtree'
-
-" File word in all files "
+" File word in all files 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
+
 Plug 'itchyny/vim-haskell-indent', {'for': 'haskell'}
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'maxmellon/vim-jsx-pretty', {'for': 'javascript'}
-Plug 'leafgarland/typescript-vim', {'for': 'javascript'}
-"Plug 'peitalin/vim-jsx-typescript', {'for': 'javascript'}
+
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -23,7 +24,7 @@ call vundle#end()
 
 " Set everything
 syntax on
-set cursorline number ruler wrap
+set cursorline number ruler 
 set mouse=a hls is ic 
 set backspace=indent,eol,start 
 set linespace=5 " better display on MacVim
@@ -33,7 +34,7 @@ set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
 set softtabstop=4         " Tab key indents by 4 spaces.
 set shiftwidth=4         " >> indents by 4 spaces.
-set shiftround             " >> indents to next multiple of 'shiftwidth'.
+set shiftround            " >> indents to next multiple of 'shiftwidth'.
 
 " Auto indent
 filetype plugin indent on
@@ -62,7 +63,6 @@ noremap <C-l> <C-w>10<
 " PLUGIN : NERDTREE
 " Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact" set tsx file as js file
 " Open nerdtree
 map <S-p> :NERDTreeToggle<CR>
 " Show hidden files
@@ -105,3 +105,6 @@ if &term =~ "screen"
     exec "set t_PS=\e[200~"                                              
     exec "set t_PE=\e[201~"                                              
 endif
+
+" Plugin typescript-vim turn off auto indent
+let g:typescript_indent_disable = 1

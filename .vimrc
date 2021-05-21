@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+
 call plug#begin()
 
 Plug 'preservim/nerdtree'
@@ -8,19 +9,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
-
-Plug 'itchyny/vim-haskell-indent', {'for': 'haskell'}
+Plug 'tomlion/vim-solidity', {'for': 'solidity'}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-set rtp+=~/.vim/bundle/Vundle.vim
+" Auto indent
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+runtime! config/**/*.vim
 
-call vundle#begin()
-Plugin 'jiangmiao/auto-pairs'
-call vundle#end()
 
 " Set everything
 syntax on
@@ -32,13 +35,10 @@ set smartcase ignorecase
 set smartindent " auto indent at new line
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
-set softtabstop=4         " Tab key indents by 4 spaces.
-set shiftwidth=4         " >> indents by 4 spaces.
+set softtabstop=2         " Tab key indents by 4 spaces.
+set shiftwidth=2         " >> indents by 4 spaces.
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
 
-" Auto indent
-filetype plugin indent on
-runtime! config/**/*.vim
 
 " Key shortcut
 " noremap is non-recursive means it will be execute rightaway
@@ -108,3 +108,6 @@ endif
 
 " Plugin typescript-vim turn off auto indent
 let g:typescript_indent_disable = 1
+
+
+

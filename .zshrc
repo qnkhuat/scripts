@@ -147,13 +147,13 @@ alias python='python3'
 alias intel="arch -x86_64"
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias brew="arch -arm64 brew"
-alias code="code-insiders"
 alias t='vim ~/fun/mds/thoughts.md'
 alias backup="~/fun/scripts/backup.sh"
 alias social="~/fun/scripts/social.sh"
-#alias vim="nvim"
+alias pomo="thyme"
+alias vim="nvim"
 
-echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing.\nSmash that hashlife!" | cowsay -n
+echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
 motivate
 
 

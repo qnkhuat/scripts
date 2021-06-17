@@ -16,7 +16,12 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'jpalardy/vim-slime'
 
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 call plug#end()
+
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
+
 
 " Set everything
 syntax on
@@ -84,7 +89,6 @@ nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 
-
 " Shortcut to run a executable fiel
 nnoremap <C-b> :!clear && ./run.sh<Enter>
 
@@ -101,5 +105,10 @@ endif
 
 " Config slime to work with tmux
 let g:slime_target = "tmux"
+let g:slime_no_mappings = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+xmap cpp <Plug>SlimeRegionSend
+nmap cpp <Plug>SlimeParagraphSend
+nmap <c-c>v <Plug>SlimeConfig
 
 "source ~/.vimrc

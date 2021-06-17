@@ -152,6 +152,7 @@ alias backup="~/fun/scripts/backup.sh"
 alias social="~/fun/scripts/social.sh"
 alias pomo="thyme"
 alias vim="nvim"
+alias lein="/usr/local/bin/lein"
 
 echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
 motivate

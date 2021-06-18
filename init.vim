@@ -33,9 +33,10 @@ set smartcase ignorecase
 set smartindent " auto indent at new line
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
-set softtabstop=2         " Tab key indents by 4 spaces.
-set shiftwidth=2         " >> indents by 4 spaces.
+set softtabstop=2         " Tab key indents by 2 spaces.
+set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
+set shiftwidth=2         " >> indents by 2 spaces.
 
 
 " Key shortcut
@@ -77,16 +78,20 @@ set autoread
 
 " PLUGIN: FZF
 " helper function to prevent Fzf to open file in nerdtree buffer
-function! FZFOpen(command_str)
-  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
-    exe "normal! \<c-w>\<c-w>"
-  endif
-  exe 'normal! ' . a:command_str . "\<cr>"
-endfunction
+"function! FZFOpen(command_str)
+"  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+"    exe "normal! \<c-w>\<c-w>"
+"  endif
+"  exe 'normal! ' . a:command_str . "\<cr>"
+"endfunction
+"
+"" Mapping for file file and serach code
+"nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
+"nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+nnoremap <silent> <C-p> :FZF .<cr>
+nnoremap <silent> <C-f> :Ag <cr>
 
-" Mapping for file file and serach code
-nnoremap <silent> <C-f> :call FZFOpen(':Ag')<CR>
-nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 
 " Shortcut to run a executable fiel

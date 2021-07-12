@@ -16,18 +16,16 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'jpalardy/vim-slime'
 
-"Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'Chiel92/vim-autoformat'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'Valloric/YouCompleteMe'
+Plug 'tweekmonster/gofmt.vim'
 
 call plug#end()
 
+"Plugin : vim-gofmt
+let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
+
+
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
-
-" Setup python for vim-autoformat
-let g:python3_host_prog="/opt/homebrew/bin/python3"
-au BufWrite * :Autoformat " Auto format on save file
-
 
 " Set everything
 syntax on
@@ -36,14 +34,17 @@ set mouse=a hls is ic
 set backspace=indent,eol,start
 set linespace=5 " better display on MacVim
 set smartcase ignorecase
-set smartindent " auto indent at new line
-set autoindent             " Indent according to previous line.
-set expandtab              " Use spaces instead of tabs.
+set smartindent           " auto indent at new line
+"set autoindent            " Indent according to previous line.
+set expandtab             " Use spaces instead of tabs.
 set softtabstop=2         " Tab key indents by 2 spaces.
 set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
-set shiftwidth=2         " >> indents by 2 spaces.
+set shiftwidth=2          " >> indents by 2 spaces.
 
+" Plugin : YCM
+set completeopt-=preview " Do not display preview
+let g:ycm_enable_diagnostic_highlighting = 0
 
 " Key shortcut
 " noremap is non-recursive means it will be execute rightaway

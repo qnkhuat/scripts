@@ -105,13 +105,13 @@ source $ZSH/oh-my-zsh.sh
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/earther/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+  eval "$__conda_setup"
 else
-    if [ -f "/Users/earther/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/earther/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/earther/miniconda3/bin:$PATH"
-    fi
+  if [ -f "/Users/earther/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "/Users/earther/miniconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/Users/earther/miniconda3/bin:$PATH"
+  fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
@@ -154,8 +154,8 @@ alias pomo="thyme"
 alias vim="nvim"
 alias lein="/usr/local/bin/lein"
 
-echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
-motivate
+#echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
+#motivate
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -16,7 +16,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'jpalardy/vim-slime'
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'Valloric/YouCompleteMe'
 Plug 'tweekmonster/gofmt.vim'
 
 call plug#end()
@@ -24,6 +25,8 @@ call plug#end()
 "Plugin : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 
+"Plugin : coc.vim
+highlight CocErrorFloat ctermfg=black
 
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 

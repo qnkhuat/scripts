@@ -142,8 +142,8 @@ export GOPATH="$HOME/go" # go home package
 # alias
 #alias ghc="stack ghc"
 alias g='googler -n 6'
-alias pip='pip3'
-alias python='python3'
+#alias pip='pip3'
+#alias python='python3'
 alias intel="arch -x86_64"
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias brew="arch -arm64 brew"
@@ -153,10 +153,15 @@ alias social="~/fun/scripts/social.sh"
 alias pomo="thyme"
 alias vim="nvim"
 alias lein="/usr/local/bin/lein"
+alias code="code-insiders"
 
-#echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
-#motivate
-
+echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
+motivate
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "/Users/earther/.ghcup/env" ] && source "/Users/earther/.ghcup/env" # ghcup-env
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/earther/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/earther/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/earther/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/earther/google-cloud-sdk/completion.zsh.inc'; fi

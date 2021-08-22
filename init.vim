@@ -17,7 +17,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jpalardy/vim-slime'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'Valloric/YouCompleteMe'
 Plug 'tweekmonster/gofmt.vim'
 
 call plug#end()
@@ -51,6 +50,14 @@ let g:ycm_enable_diagnostic_highlighting = 0
 
 " Key shortcut
 " noremap is non-recursive means it will be execute rightaway
+" map to move block of code up and down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 noremap q ^
 noremap f e
 noremap e $

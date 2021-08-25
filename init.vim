@@ -1,5 +1,5 @@
-set runtimepath^=~/.vim,~/.vim/after
-let &packpath=&runtimepath
+"set runtimepath^=~/.vim,~/.vim/after,~/.vim/syntax
+"let &packpath=&runtimepath
 
 call plug#begin()
 
@@ -49,15 +49,6 @@ set completeopt-=preview " Do not display preview
 let g:ycm_enable_diagnostic_highlighting = 0
 
 " Key shortcut
-" noremap is non-recursive means it will be execute rightaway
-" map to move block of code up and down
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
 noremap q ^
 noremap f e
 noremap e $
@@ -71,9 +62,17 @@ nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nmap 9 :set invnumber<CR>
 
+
+" noremap is non-recursive means it will be execute rightaway
+" map to move block of code up and down
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 " mapping to swith between view points
-noremap <C-k> <C-w>w
-noremap <C-j> <C-w>W
+nnoremap <C-k> <C-w>w
+nnoremap <C-j> <C-w>W
 noremap <C-h> <C-w>10>
 noremap <C-l> <C-w>10<
 

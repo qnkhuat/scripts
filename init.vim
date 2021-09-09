@@ -62,6 +62,8 @@ nmap 9 :set invnumber<CR>
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
+inoremap <C-j> :m '>+1<CR>gv=gv
+inoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 

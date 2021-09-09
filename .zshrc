@@ -154,14 +154,14 @@ alias pomo="thyme"
 alias vim="nvim"
 alias lein="/usr/local/bin/lein"
 alias code="code-insiders"
+#alias node="n exec 14 node"
+#alias npm="n exec 14 npm"
 
 echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
 motivate
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/earther/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/earther/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/earther/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/earther/google-cloud-sdk/completion.zsh.inc'; fi
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true

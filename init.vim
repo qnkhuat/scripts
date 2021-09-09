@@ -1,6 +1,3 @@
-"set runtimepath^=~/.vim,~/.vim/after,~/.vim/syntax
-"let &packpath=&runtimepath
-
 call plug#begin()
 
 Plug 'preservim/nerdtree'
@@ -23,13 +20,16 @@ call plug#end()
 
 "Plugin : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
+let g:gofmt_on_save = 1
+let g:go_highlight_trailing_whitespace_error=0
 
 "Plugin : coc.vim
 highlight CocErrorFloat ctermfg=black
 
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 
 " Set everything
+filetype plugin on
 syntax on
 set cursorline number ruler
 set mouse=a hls is ic
@@ -44,9 +44,6 @@ set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 
-" Plugin : YCM
-set completeopt-=preview " Do not display preview
-let g:ycm_enable_diagnostic_highlighting = 0
 
 " Key shortcut
 noremap q ^
@@ -65,8 +62,6 @@ nmap 9 :set invnumber<CR>
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 

@@ -26,7 +26,7 @@ let g:go_highlight_trailing_whitespace_error=0
 "Plugin : coc.vim
 highlight CocErrorFloat ctermfg=black
 
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 
 " Set everything
 filetype plugin on
@@ -66,6 +66,7 @@ inoremap <C-j> :m '>+1<CR>gv=gv
 inoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+noremap + gg=G
 
 " mapping to swith between view points
 nnoremap <C-k> <C-w>w
@@ -111,6 +112,6 @@ endif
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-xmap cpp <Plug>SlimeRegionSend
-nmap cpp <Plug>SlimeParagraphSend
+xmap S <Plug>SlimeRegionSend
+nmap S <Plug>SlimeParagraphSend
 nmap <c-c>v <Plug>SlimeConfig

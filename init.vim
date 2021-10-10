@@ -16,7 +16,13 @@ Plug 'jpalardy/vim-slime'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim'
 
+" Clojure
+Plug 'Olical/conjure', {'tag': 'v4.25.0'}
+
 call plug#end()
+
+let maplocalleader = " "
+let g:conjure#mapping#doc_word = ""
 
 "Plugin : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
@@ -46,6 +52,7 @@ set shiftwidth=2          " >> indents by 2 spaces.
 
 
 " Key shortcut
+noremap <Leader>A 100j
 noremap q ^
 noremap f e
 noremap e $

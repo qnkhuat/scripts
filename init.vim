@@ -21,8 +21,11 @@ Plug 'Olical/conjure', {'tag': 'v4.25.0'}
 
 call plug#end()
 
+" Plugin: conjure
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = ""
+xmap s <localleader>E
+nmap s <localleader>er
 
 "Plugin : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
@@ -122,4 +125,5 @@ let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 xmap S <Plug>SlimeRegionSend
 nmap S <Plug>SlimeParagraphSend
+
 nmap <c-c>v <Plug>SlimeConfig

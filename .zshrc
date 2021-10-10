@@ -125,7 +125,7 @@ alias code="code-insiders"
 #alias node="n exec 14 node"
 #alias npm="n exec 14 npm"
 
-echo "Use less energy for talking, Code instead.\nWhether you're the best or you're nothing." | cowsay -n
+echo "I code, Therefore I am" | cowsay -n
 motivate
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

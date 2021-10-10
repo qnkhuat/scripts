@@ -31,6 +31,7 @@ let g:go_highlight_trailing_whitespace_error=0
 
 "Plugin : coc.vim
 highlight CocErrorFloat ctermfg=black
+highlight NormalFloat ctermbg=black guibg=black
 
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 

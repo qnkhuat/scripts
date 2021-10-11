@@ -27,8 +27,8 @@ let g:conjure#mapping#doc_word = v:false
 xmap s <localleader>E
 nmap s <localleader>er
 " evaluate and add result as comment to next line
-xmap S <localleader>E o;; <C-r>c<ESC><CR> 
-nmap S <localleader>er o;; <C-r>c<ESC><CR> 
+xmap S <localleader>E o;; => <C-r>c<ESC><CR> 
+nmap S <localleader>er o;; => <C-r>c<ESC><CR> 
 "Plugin : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 let g:gofmt_on_save = 1
@@ -125,7 +125,6 @@ endif
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-"xmap S <Plug>SlimeRegionSend
-"nmap S <Plug>SlimeParagraphSend
-
+xmap cpp <Plug>SlimeRegionSend
+nmap cpp <Plug>SlimeParagraphSend
 nmap <c-c>v <Plug>SlimeConfig

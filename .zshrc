@@ -133,3 +133,6 @@ motivate
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+local ret_status="%(?:%{$fg_bold[green]%}λ:%{$fg_bold[red]%}λ)"
+export PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'

@@ -427,7 +427,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, start an Emacs server if one is not already running.
    ;; (default nil)
-   dotspacemacs-enable-server t
+   dotspacemacs-enable-server nil
 
    ;; Set the emacs server socket location.
    ;; If nil, uses whatever the Emacs default is, otherwise a directory path
@@ -438,7 +438,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server t
+   dotspacemacs-persistent-server nil
 
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
@@ -544,3 +544,62 @@ before packages are loaded.")
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(safe-local-variable-values
+   '((cljr-favor-prefix-notation)
+     (eval define-clojure-indent
+           (l/matcha
+            '(1
+              (:defn)))
+           (l/matche
+            '(1
+              (:defn)))
+           (p\.types/def-abstract-type
+            '(1
+              (:defn)))
+           (p\.types/defprotocol+
+            '(1
+              (:defn)))
+           (p\.types/defrecord+
+            '(2 nil nil
+                (:defn)))
+           (p\.types/deftype+
+            '(2 nil nil
+                (:defn)))
+           (p/def-map-type
+            '(2 nil nil
+                (:defn)))
+           (p/defprotocol+
+            '(1
+              (:defn)))
+           (tools\.macro/macrolet
+            '(1
+              ((:defn))
+              :form)))
+     (eval put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+     (eval put 's/defn 'clojure-doc-string-elt 2)
+     (eval put 'setting/defsetting 'clojure-doc-string-elt 2)
+     (eval put 'defsetting 'clojure-doc-string-elt 2)
+     (eval put 'api/defendpoint-async 'clojure-doc-string-elt 3)
+     (eval put 'api/defendpoint 'clojure-doc-string-elt 3)
+     (eval put 'define-premium-feature 'clojure-doc-string-elt 2)
+     (eval put 'defendpoint-async 'clojure-doc-string-elt 3)
+     (eval put 'defendpoint 'clojure-doc-string-elt 3)
+     (ftf-project-finders ftf-get-top-git-dir))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)

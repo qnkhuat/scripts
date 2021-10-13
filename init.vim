@@ -6,6 +6,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'jiangmiao/auto-pairs'
+Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -16,26 +17,37 @@ Plug 'jpalardy/vim-slime'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim'
 
+Plug 'colepeters/spacemacs-theme.vim'
+
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
 
 call plug#end()
 
-" Plugin: conjure
+" THEME: 
+if (has("termguicolors"))
+  set termguicolors
+endif
+set background=dark
+colorscheme spacemacs-theme
+
+
+" PLUGIN: conjure
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = v:false
 xmap s <localleader>E
 nmap s <localleader>er
-" evaluate and add result as comment to next line
-xmap S <localleader>E o;; => <C-r>c<ESC><CR> 
-nmap S <localleader>er o;; => <C-r>c<ESC><CR> 
-"Plugin : vim-gofmt
+" add result as comment to next line
+xmap S o;; => <C-r>c<ESC><CR> 
+nmap S o;; => <C-r>c<ESC><CR> 
+"
+" PLUGIN : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 let g:gofmt_on_save = 1
 let g:go_highlight_trailing_whitespace_error=0
 
-"Plugin : coc.vim
-highlight CocErrorFloat ctermfg=black
+" PLUGIN : coc.vim
+highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight NormalFloat ctermbg=black guibg=black
 
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
@@ -56,7 +68,6 @@ set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 
-
 " Key shortcut
 noremap <Leader>A 100j
 noremap q ^
@@ -71,7 +82,6 @@ noremap T :W<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nmap 9 :set invnumber<CR>
-
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
@@ -121,10 +131,18 @@ if &term =~ "screen"
   exec "set t_PE=\e[201~"
 endif
 
-" Config slime to work with tmux
+" PLUGIN: slime
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 xmap cpp <Plug>SlimeRegionSend
 nmap cpp <Plug>SlimeParagraphSend
 nmap <c-c>v <Plug>SlimeConfig
+
+
+" PLUGIN: rainbow_parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+

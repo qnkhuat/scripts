@@ -38,8 +38,7 @@ let g:go_highlight_trailing_whitespace_error=0
 
 " PLUGIN : coc.vim
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
-highlight NormalFloat ctermbg=black guibg=black
-" highlight Normal guifg=b2b2b guibg=292b2e ctermfg=07 ctermbg=00
+highlight NormalFloat ctermbg=DarkBlue guibg=white
 
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 
@@ -141,13 +140,13 @@ let g:rbpt_colorpairs = [
     \ ['brown',   'RoyalBlue3'],
     \ ['blue',    'SeaGreen3'],
     \ ['gray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
+    \ ['darkgreen','firebrick3'],
     \ ['cyan',    'RoyalBlue3'],
     \ ['darkred',     'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',   'firebrick3'],
     \ ['gray',    'RoyalBlue3'],
-    \ ['black',   'SeaGreen3'],
+    \ ['yellow',   'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['blue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],

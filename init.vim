@@ -12,13 +12,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
-Plug 'jpalardy/vim-slime'
+"Plug 'jpalardy/vim-slime'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
+Plug 'tpope/vim-fireplace'
 
 call plug#end()
 
@@ -123,12 +124,12 @@ if &term =~ "screen"
 endif
 
 " PLUGIN: slime
-let g:slime_target = "tmux"
-let g:slime_no_mappings = 1
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-xmap cpp <Plug>SlimeRegionSend
-nmap cpp <Plug>SlimeParagraphSend
-nmap <c-c>v <Plug>SlimeConfig
+"let g:slime_target = "tmux"
+"let g:slime_no_mappings = 1
+"let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+"xmap cpp <Plug>SlimeRegionSend
+"nmap cpp <Plug>SlimeParagraphSend
+"nmap <c-c>v <Plug>SlimeConfig
 
 
 " PLUGIN: rainbow_parentheses

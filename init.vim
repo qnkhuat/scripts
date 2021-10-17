@@ -33,7 +33,7 @@ nmap s <localleader>er
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
 nnoremap F <Space>gd<CR>
-"
+
 " PLUGIN : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 let g:gofmt_on_save = 1
@@ -44,6 +44,7 @@ highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
 
+" PLUGIN : Auto pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 
 " Set everything
@@ -107,12 +108,22 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 set winfixwidth winfixheight
 set autoread
 
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
-nnoremap <silent> <C-p> :FZF .<cr>
+" PLUGIN : FZF
+nnoremap <silent> <C-p> :Files <cr>
 nnoremap <silent> <C-f> :Ag <cr>
+nnoremap M :Marks<CR>
+" Show commits
+nnoremap gc :Commits<CR> 
+" Show all commits of current buffer
+nnoremap gb :BCommits<CR> 
 
 " Shortcut to run a executable fiel
 nnoremap <C-b> :!clear && ./run.sh<Enter>
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
 
 " fix Tmux
 set background=dark
@@ -124,6 +135,7 @@ if &term =~ "screen"
   exec "set t_PS=\e[200~"
   exec "set t_PE=\e[201~"
 endif
+
 
 " PLUGIN: slime
 "let g:slime_target = "tmux"

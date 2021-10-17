@@ -21,6 +21,8 @@ Plug 'tweekmonster/gofmt.vim'
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
 Plug 'tpope/vim-fireplace'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " PLUGIN: conjure
@@ -34,7 +36,10 @@ xmap S o;; => <C-r>c<ESC><CR>
 nmap S o;; => <C-r>c<ESC><CR> 
 nnoremap F <Space>gd<CR>
 
-" PLUGIN : vim-gofmt
+" PLUGIN : vim-fugitive
+nnoremap B :Git blame<CR>
+
+"" PLUGIN : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 let g:gofmt_on_save = 1
 let g:go_highlight_trailing_whitespace_error=0

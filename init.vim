@@ -25,12 +25,14 @@ call plug#end()
 
 " PLUGIN: conjure
 let maplocalleader = " "
-let g:conjure#mapping#doc_word = v:false
+let g:conjure#mapping#doc_word = "d" 
+let g:conjure#mapping#def_word = "f"
 xmap s <localleader>E
 nmap s <localleader>er
 " add result as comment to next line
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
+nnoremap F <Space>gd<CR>
 "
 " PLUGIN : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'

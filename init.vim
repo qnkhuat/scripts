@@ -34,10 +34,10 @@ nmap s <localleader>er
 " add result as comment to next line
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
-nnoremap F <Space>gd<CR>
+nmap F <Space>gd<CR>
 
 " PLUGIN : vim-fugitive
-nnoremap B :Git blame<CR>
+nmap B :Git blame<CR>
 
 "" PLUGIN : vim-gofmt
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
@@ -69,33 +69,33 @@ set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 
 " Key shortcut
-noremap <Leader>A 100j
-noremap q ^
-noremap f e
-noremap e $
-noremap J 10j
-noremap K 10k
-noremap L 10l
-noremap H 10h
-noremap 0 :nohls<CR>
-noremap T :W<CR>
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+map <Leader>A 100j
+map q ^
+map f e
+map e $
+map J 10j
+map K 10k
+map L 10l
+map H 10h
+map 0 :nohls<CR>
+map T :W<CR>
+nmap <Tab> gt
+nmap <S-Tab> gT
 nmap 9 :set invnumber<CR>
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
-inoremap <C-j> :m '>+1<CR>gv=gv
-inoremap <C-k> :m '<-2<CR>gv=gv
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-noremap + gg=G
+imap <C-j> :m '>+1<CR>gv=gv
+imap <C-k> :m '<-2<CR>gv=gv
+vmap <C-j> :m '>+1<CR>gv=gv
+vmap <C-k> :m '<-2<CR>gv=gv
+map + gg=G
 
 " mapping to swith between view points
-nnoremap <C-k> <C-w>w
-nnoremap <C-j> <C-w>W
-noremap <C-h> <C-w>10>
-noremap <C-l> <C-w>10<
+nmap <C-k> <C-w>w
+nmap <C-j> <C-w>W
+nmap <C-h> <C-w>10>
+nmap <C-l> <C-w>10<
 
 " PLUGIN : NERDTREE
 " Auto turn on nerdtree
@@ -106,7 +106,7 @@ map <S-p> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Open file in Tree
-noremap t :NERDTreeFind<CR>
+map t :NERDTreeFind<CR>
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 " prevent nerdtree from resize panes when toggle
@@ -114,16 +114,16 @@ set winfixwidth winfixheight
 set autoread
 
 " PLUGIN : FZF
-nnoremap <silent> <C-p> :Files <cr>
-nnoremap <silent> <C-f> :Ag <cr>
-nnoremap M :Marks<CR>
+nmap <silent> <C-p> :Files <cr>
+nmap <silent> <C-f> :Ag <cr>
+nmap M :Marks<CR>
 " Show commits
-nnoremap gc :Commits<CR> 
+nmap gc :Commits<CR> 
 " Show all commits of current buffer
-nnoremap gb :BCommits<CR> 
+nmap gb :BCommits<CR> 
 
 " Shortcut to run a executable fiel
-nnoremap <C-b> :!clear && ./run.sh<Enter>
+nmap <C-b> :!clear && ./run.sh<Enter>
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number -- '.shellescape(<q-args>), 0,

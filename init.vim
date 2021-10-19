@@ -19,7 +19,7 @@ Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
-Plug 'tpope/vim-fireplace'
+"Plug 'tpope/vim-fireplace'
 
 Plug 'tpope/vim-fugitive'
 
@@ -34,7 +34,7 @@ nmap s <localleader>er
 " add result as comment to next line
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
-nnoremap F <Space>gd<CR>
+nnoremap F :ConjureDef<CR>
 
 " PLUGIN : vim-fugitive
 nnoremap B :Git blame<CR>

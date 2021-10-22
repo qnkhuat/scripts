@@ -4,17 +4,17 @@
   "diagnostic.checkCurrentLine": false,
   "javascript.suggestionActions.enabled": true,
   "typescript.suggestionActions.enabled": true,
+  "coc.source.conjure.priority": 999999,
   "languageserver": {
     "clojure-lsp": {
       "command": "bash",
       "args": ["-c", "clojure-lsp"],
       "filetypes": ["clojure"],
-      "rootPatterns": ["project.clj"],
+      "rootPatterns": ["project.clj", "deps.edn"],
       "additionalSchemes": ["jar", "zipfile"],
       "trace.server": "verbose",
       "disableDiagnostics": false,
-      "initializationOptions": {
-      }
+      "initializationOptions": {}
     }
   }
 }

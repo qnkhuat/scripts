@@ -34,7 +34,7 @@ nmap s <localleader>er
 " add result as comment to next line
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
-nnoremap F :ConjureDoc<CR>
+nnoremap F :ConjureDefWord<CR>
 
 " PLUGIN : vim-fugitive
 nnoremap B :Git blame<CR>

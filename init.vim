@@ -19,7 +19,7 @@ Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
-"Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fireplace'
 
 Plug 'tpope/vim-fugitive'
 
@@ -29,6 +29,8 @@ call plug#end()
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d" 
 let g:conjure#mapping#def_word = "f"
+let g:conjure#log#wrap = "true"
+let g:conjure#client#clojure#nrepl#eval#raw_out = "true"
 xmap s <localleader>E
 nmap s <localleader>er
 " add result as comment to next line

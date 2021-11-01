@@ -12,14 +12,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
-"Plug 'jpalardy/vim-slime'
+Plug 'jpalardy/vim-slime'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
-Plug 'tpope/vim-fireplace'
+" Plug 'tpope/vim-fireplace'
 
 Plug 'tpope/vim-fugitive'
 
@@ -28,15 +28,17 @@ call plug#end()
 " PLUGIN: conjure
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d" 
-let g:conjure#mapping#def_word = "f"
 let g:conjure#log#wrap = "true"
 let g:conjure#client#clojure#nrepl#eval#raw_out = "true"
+let g:conjure#log#hud#width = 0.45
+let g:conjure#log#hud#height = 0.4
+
 xmap s <localleader>E
 nmap s <localleader>er
 " add result as comment to next line
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
-nnoremap F :ConjureDefWord<CR>
+nnoremap F :ConjureDef<CR>
 
 " PLUGIN : vim-fugitive
 nnoremap B :Git blame<CR>
@@ -145,12 +147,12 @@ endif
 
 
 " PLUGIN: slime
-"let g:slime_target = "tmux"
-"let g:slime_no_mappings = 1
-"let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-"xmap cpp <Plug>SlimeRegionSend
-"nmap cpp <Plug>SlimeParagraphSend
-"nmap <c-c>v <Plug>SlimeConfig
+let g:slime_target = "tmux"
+let g:slime_no_mappings = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+xmap cpp <Plug>SlimeRegionSend
+nmap cpp <Plug>SlimeParagraphSend
+nmap <c-c>v <Plug>SlimeConfig
 
 
 " PLUGIN: rainbow_parentheses

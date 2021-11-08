@@ -15,11 +15,10 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jpalardy/vim-slime'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tweekmonster/gofmt.vim'
+"Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0'}
-" Plug 'tpope/vim-fireplace'
 
 Plug 'tpope/vim-fugitive'
 

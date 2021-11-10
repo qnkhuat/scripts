@@ -136,3 +136,4 @@ motivate
 
 local ret_status="%(?:%{$fg_bold[green]%}λ:%{$fg_bold[red]%}λ)"
 export PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"

@@ -72,6 +72,7 @@ set softtabstop=2         " Tab key indents by 2 spaces.
 set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
+set splitright            " split the new file open on the right
 
 " Key shortcut
 noremap <Leader>A 100j

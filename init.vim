@@ -33,6 +33,10 @@ let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
 " copy the function under cursor to the default register
 nmap ts :execute "ConjureEval (symbol (var " . expand("<cword>") . "))"<cr>
+" execute a test case
+nmap tt :execute "ConjureEval (clojure.test/test-vars [#'" . expand("<cword>") . "])"<cr>
+" execute test for a namespace
+nmap tn :execute "ConjureEval (clojure.test/run-tests ' " . expand("<cword>") . ")"<cr>
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er

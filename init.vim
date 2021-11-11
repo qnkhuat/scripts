@@ -31,7 +31,9 @@ let g:conjure#log#wrap = "true"
 let g:conjure#client#clojure#nrepl#eval#raw_out = "true"
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
-
+" copy the function under cursor to the default register
+nmap ts :execute "ConjureEval (symbol (var " . expand("<cword>") . "))"<cr>
+" Eval
 xmap s <localleader>E
 nmap s <localleader>er
 " add result as comment to next line
@@ -82,6 +84,8 @@ noremap L 10l
 noremap H 10h
 noremap 0 :nohls<CR>
 noremap T :W<CR>
+" Opposite of <C-o>
+nnoremap <C-u> <C-I>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nmap 9 :set invnumber<CR>

@@ -44,6 +44,7 @@ nmap s <localleader>er
 xmap S o;; => <C-r>c<ESC><CR> 
 nmap S o;; => <C-r>c<ESC><CR> 
 nnoremap F :ConjureDef<CR>
+nnoremap D :ConjureDoc<CR>
 
 " PLUGIN : vim-fugitive
 nnoremap B :Git blame<CR>
@@ -77,6 +78,8 @@ set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 set splitright            " split the new file open on the right
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Key shortcut
 noremap <Leader>A 100j

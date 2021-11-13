@@ -1,5 +1,7 @@
 cd ~/fun/scripts
-cp -r ~/.config ~/_config
+mkdir -p ._config
+cp -r ~/.config/nvim ./_config/nvim
+cp -r ~/.config/coc ./_config/coc
 cp ~/.zshrc ~/.tmux.conf ~/.vimrc ~/.config/nvim/init.vim ~/.config/nvim/coc-settings.json ~/.spacemacs ~/.clojure/deps.edn .
 git add .
 git commit -m "auto backup: $1"

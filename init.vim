@@ -4,6 +4,7 @@ Plug 'preservim/nerdtree'
 " File word in all files
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'tpope/vim-fugitive'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
@@ -18,15 +19,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
-Plug 'Olical/conjure', {'tag': 'v4.25.0'}
-
-Plug 'tpope/vim-fugitive'
+Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
+Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 
 call plug#end()
 
 " PLUGIN: conjure
 let maplocalleader = " "
-let g:conjure#mapping#doc_word = "d" 
+let g:conjure#mapping#doc_word = "d"
 let g:conjure#log#wrap = "true"
 let g:conjure#client#clojure#nrepl#eval#raw_out = "true"
 let g:conjure#log#hud#width = 0.45
@@ -41,10 +41,19 @@ nmap tn :execute "ConjureEval (clojure.test/run-tests ' " . expand("<cword>") . 
 xmap s <localleader>E
 nmap s <localleader>er
 " add result as comment to next line
-xmap S o;; => <C-r>c<ESC><CR> 
-nmap S o;; => <C-r>c<ESC><CR> 
+xmap S o;; => <C-r>c<ESC><CR>
+nmap S o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
+
+" PLUGIN: clojure-vim/clojure.vim
+let g:clojure_align_multiline_strings = 1
+let g:clojure_align_subforms = 1
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
+let g:clojure_maxlines = 0
+let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
 " PLUGIN : vim-fugitive
 nnoremap B :Git blame<CR>
@@ -58,6 +67,7 @@ let g:go_highlight_trailing_whitespace_error=0
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
+let g:coc_global_extensions = ['coc-conjure']
 
 " PLUGIN : Auto pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
@@ -135,9 +145,9 @@ nnoremap <silent> <C-p> :Files <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>
 " Show commits
-nnoremap gc :Commits<CR> 
+nnoremap gc :Commits<CR>
 " Show all commits of current buffer
-nnoremap gb :BCommits<CR> 
+nnoremap gb :BCommits<CR>
 
 " Shortcut to run a executable fiel
 nnoremap <C-b> :!clear && ./run.sh<Enter>
@@ -157,7 +167,6 @@ if &term =~ "screen"
   exec "set t_PS=\e[200~"
   exec "set t_PE=\e[201~"
 endif
-
 
 " PLUGIN: slime
 let g:slime_target = "tmux"

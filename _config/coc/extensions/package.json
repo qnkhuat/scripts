@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "coc-conjure": ">=3.0.1",
+    "coc-diagnostic": ">=0.22.1",
+    "coc-go": ">=0.13.3",
+    "coc-prettier": ">=1.1.24",
+    "coc-pyright": ">=1.1.161",
+    "coc-python": ">=1.2.13",
+    "coc-rls": ">=1.1.6",
+    "coc-tsserver": ">=1.8.5"
+  }
+}

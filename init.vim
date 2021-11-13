@@ -79,7 +79,9 @@ set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 set splitright            " split the new file open on the right
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=DarkGray guibg=darkgray
+" Auto remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Key shortcut
 noremap <Leader>A 100j

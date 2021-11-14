@@ -24,7 +24,9 @@ Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 
 call plug#end()
 
+" ----------------------------------------
 " PLUGIN: conjure
+" ----------------------------------------
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d"
 let g:conjure#log#wrap = "true"
@@ -46,7 +48,9 @@ nmap S o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
 
+" ----------------------------------------
 " PLUGIN: clojure-vim/clojure.vim
+" ----------------------------------------
 let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
@@ -55,24 +59,34 @@ let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
 let g:clojure_maxlines = 0
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
+" ----------------------------------------
 " PLUGIN : vim-fugitive
+" ----------------------------------------
 nnoremap B :Git blame<CR>
 
+" ----------------------------------------
 "" PLUGIN : vim-gofmt
+" ----------------------------------------
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 let g:gofmt_on_save = 1
 let g:go_highlight_trailing_whitespace_error=0
 
+" ----------------------------------------
 " PLUGIN : coc.vim
+" ----------------------------------------
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
 let g:coc_global_extensions = ['coc-conjure']
 
+" ----------------------------------------
 " PLUGIN : Auto pairs
+" ----------------------------------------
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 
+" ----------------------------------------
 " Set everything
+" ----------------------------------------
 filetype plugin on
 syntax on
 set cursorline number ruler
@@ -124,7 +138,9 @@ nnoremap <C-j> <C-w>W
 noremap <C-h> <C-w>10>
 noremap <C-l> <C-w>10<
 
+" ----------------------------------------
 " PLUGIN : NERDTREE
+" ----------------------------------------
 " Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open nerdtree
@@ -140,7 +156,9 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 set winfixwidth winfixheight
 set autoread
 
+" ----------------------------------------
 " PLUGIN : FZF
+" ----------------------------------------
 nnoremap <silent> <C-p> :Files <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>
@@ -157,7 +175,9 @@ command! -bang -nargs=* GGrep
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 
+" ----------------------------------------
 " fix Tmux
+" ----------------------------------------
 set background=dark
 set t_Co=256
 
@@ -168,7 +188,9 @@ if &term =~ "screen"
   exec "set t_PE=\e[201~"
 endif
 
+" ----------------------------------------
 " PLUGIN: slime
+" ----------------------------------------
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
@@ -176,8 +198,9 @@ xmap cpp <Plug>SlimeRegionSend
 nmap cpp <Plug>SlimeParagraphSend
 nmap <c-c>v <Plug>SlimeConfig
 
-
+" ----------------------------------------
 " PLUGIN: rainbow_parentheses
+" ----------------------------------------
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare

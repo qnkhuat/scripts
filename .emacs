@@ -35,25 +35,21 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
-
     ;; highlight matching parentheses
     highlight-parentheses                                   
 
     ;; Make ido display vertically
     ido-vertical-mode
 
+    ;; improved of iod
+    ivy
+    counsel
+
     ;; project navigation
     projectile
 
     ;; colorful parenthesis matching
     rainbow-delimiters
-
-    ;; better windows navigation
-    ace-window
 
     ;; vim mode
     evil
@@ -82,12 +78,24 @@
 ;; --------------------------------
 ;; Config: editing
 ;; --------------------------------
+;(setq default-directory ".")
 
 ;; --------------------------------
 ;; Config: mapping
 ;; --------------------------------
 
 (define-key global-map (kbd "RET") 'newline-and-indent) ; auto indent
+
+;; --------------------------------
+;; Config: use-package
+;; --------------------------------
+(require 'use-package)
+
+;; --------------------------------
+;; Config: rainbow-delimeters
+;; --------------------------------
+(require 'rainbow-delimiters)
+(rainbow-delimiters-mode)
 
 ;; --------------------------------
 ;; Config: evil
@@ -103,7 +111,6 @@
 (define-key evil-normal-state-map "L" "10l")
 (define-key evil-normal-state-map "q" "^")
 (define-key evil-normal-state-map "e" "$")
-
 (define-key evil-visual-state-map "H" "10h")
 (define-key evil-visual-state-map "J" "10j")
 (define-key evil-visual-state-map "K" "10k")
@@ -112,19 +119,7 @@
 (define-key evil-visual-state-map "e" "$")
 
 ;; --------------------------------
-;; Config: windowmove
-;; --------------------------------
-;(global-set-key (kbd "C-j") 'windmove-right)
-;(global-set-key (kbd "C-k") 'windmove-down)
-
-;; --------------------------------
-;; Config: projectile
-;; --------------------------------
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "M-f") 'projectile-command-map)
-
-;; --------------------------------
-;; Config: Ido mode
+;; Config: ido
 ;; --------------------------------
 (setq ido-enable-flex-matching t)
 (ido-mode 1)
@@ -132,10 +127,13 @@
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 ;; --------------------------------
-;; Config: smex
+;; Config: ivy
 ;; --------------------------------
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(ivy-mode)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key (kbd "C-c f") 'counsel-ag)
+(global-set-key (kbd "C-c p") 'counsel-fzf)
 
 ;; --------------------------------
 ;; Config: customize

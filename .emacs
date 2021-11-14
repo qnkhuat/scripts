@@ -53,8 +53,11 @@
 
     ;; vim mode
     evil
+    evil-tabs
 
     org
+    ;; theme
+    spacemacs-theme
 
     ;; git integration
     magit))
@@ -67,38 +70,45 @@
     (package-install p)))
 
 ;; --------------------------------
-;; Config: Display
+;; config-Display
 ;; --------------------------------
 (xterm-mouse-mode 1) ;; Enable mouse
+(menu-bar-mode -1) ;; turn off menubar
 
 (setq enable-local-variables nil) ;; Disable the warning at the start
 
 (global-display-line-numbers-mode)
+(load-theme 'spacemacs-dark t)
 
 ;; --------------------------------
-;; Config: editing
+;; config-editting
 ;; --------------------------------
-;(setq default-directory ".")
+(setq default-directory ".")
 
 ;; --------------------------------
-;; Config: mapping
+;; config-mapping
 ;; --------------------------------
 
 (define-key global-map (kbd "RET") 'newline-and-indent) ; auto indent
 
 ;; --------------------------------
-;; Config: use-package
+;; config-cider
+;; --------------------------------
+(global-set-key (kbd "C-c C-d v") 'cider-find-var)
+
+;; --------------------------------
+;; config-use-package
 ;; --------------------------------
 (require 'use-package)
 
 ;; --------------------------------
-;; Config: rainbow-delimeters
+;; config-rainbow-delimeters
 ;; --------------------------------
 (require 'rainbow-delimiters)
-(rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; --------------------------------
-;; Config: evil
+;; config-evil
 ;; --------------------------------
 (require 'evil)
 (evil-mode 1)
@@ -118,8 +128,10 @@
 (define-key evil-visual-state-map "q" "^")
 (define-key evil-visual-state-map "e" "$")
 
+(global-evil-tabs-mode t)
+
 ;; --------------------------------
-;; Config: ido
+;; config-ido
 ;; --------------------------------
 (setq ido-enable-flex-matching t)
 (ido-mode 1)
@@ -127,22 +139,34 @@
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 ;; --------------------------------
-;; Config: ivy
+;; config-ivy
 ;; --------------------------------
 (ivy-mode)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
-(global-set-key (kbd "C-c f") 'counsel-ag)
-(global-set-key (kbd "C-c p") 'counsel-fzf)
+
+(defvar find-file-root-dir (getenv "PWD")
+  "Directory from which to start all find-file's")
+
+(defun find-file-in-root ()
+  "Make find-file always start at some root directory."
+  (interactive)
+  (let ((default-directory find-file-root-dir))
+    (call-interactively 'counsel-fzf)))
+
+(global-set-key (kbd "C-c C-p") 'find-file-in-root)
+(global-set-key (kbd "C-c C-f") 'counsel-ag)
 
 ;; --------------------------------
-;; Config: customize
+;; config-customize
 ;; --------------------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(package-selected-packages
    '(ag smex rainbow-delimiters projectile paredit magit ido-vertical-mode ido-completing-read+ helm exec-path-from-shell evil clojure-mode-extra-font-locking cider)))
 (custom-set-faces
@@ -151,3 +175,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;; --------------------------------
+;; mode-clojure
+;; --------------------------------
+(defun setup-clojure-buffer ()
+  ;; Count hyphens, etc. as word characters in lisps
+  (modify-syntax-entry ?- "w" clojure-mode-syntax-table))
+
+(add-hook 'clojure-mode-hook 'setup-clojure-buffer)

@@ -1,0 +1,1938 @@
+{
+  "coc-python|/Users/earther/fun/bbb": {
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:214f2800431433264da8a3bbd5b3a6f5": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:214f2800431433264da8a3bbd5b3a6f5": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/fun/bbb": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    }
+  },
+  "coc-python|global": {
+    "INTERPRETERS_CACHE_v3_VirtualEnvService": [],
+    "/opt/homebrew/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/opt/homebrew/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "cb62e934e197a75ecfd1a434aa7c1976d9162c4f01d41d35ef4763b2172648f68228ec97816b0f3f1f7294345468704c5cd6d63886d0ec0c261086b73ce82d30"
+      },
+      "expiry": 1636888171802
+    },
+    "/usr/bin/python2.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a"
+      },
+      "expiry": 1636888171789
+    },
+    "/usr/bin/python2.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python2",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a"
+      },
+      "expiry": 1636888171798
+    },
+    "/usr/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a"
+      },
+      "expiry": 1636888171800
+    },
+    "/opt/homebrew/bin/python3.9.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/opt/homebrew/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "e1aecacb481d9eeb0f5abee05a35052711df42d56b57e7579495266feee3f9cde2d68e58be70ea39eb1bba855defc44f2ed292fb88554e302be28be62a8bc441"
+      },
+      "expiry": 1636888171781
+    },
+    "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a"
+      },
+      "expiry": 1636888171911
+    },
+    "/Users/earther/miniconda3/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3",
+        "fileHash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1"
+      },
+      "expiry": 1636888171953
+    },
+    "/opt/homebrew/opt/python@3.9/bin/python3.9.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16"
+      },
+      "expiry": 1636888171891
+    },
+    "INTERPRETERS_CACHE_v3_CurrentPathService": [
+      {
+        "architecture": 3,
+        "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      }
+    ],
+    "InterpreterAutoSeletionRule-currentPath": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.7-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 7,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.7-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+      "type": "Unknown"
+    },
+    "preferredGlobalPyInterpreter": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.7-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 7,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.7-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+      "type": "Unknown",
+      "displayName": "Python 3.9.7 64-bit"
+    },
+    "/opt/homebrew/opt/python@3.9/bin/python3.9.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+        "info": {
+          "architecture": 3,
+          "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.9.7-final",
+            "major": 3,
+            "minor": 9,
+            "patch": 7,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.9.7-final"
+          },
+          "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+          "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+          "type": "Unknown",
+          "displayName": "Python 3.9.7 64-bit"
+        }
+      },
+      "expiry": 1636892420670
+    },
+    "/Users/earther/miniconda3/envs/dev/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.8-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 8,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.8-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev",
+        "fileHash": "fb222ed94f942bb83c311ebd685ec878c93aa707834accb877018a4f58554b4aeaac43683d104d7fd4b7ddec11f3a735e449891b87c261cc7d0f1dc78beb994f"
+      },
+      "expiry": 1636888172354
+    },
+    "/Users/earther/miniconda3/envs/dev36/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev36/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.6.13-final",
+          "major": 3,
+          "minor": 6,
+          "patch": 13,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.6.13-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev36",
+        "fileHash": "e0c3598dad56e91d3b4ba43ad03a5024d7f21e96fc878484f29a6a01dd611b118a1d21815faa5a464a6eae8089af0438a404e98292a9173f92f648d3f53ab632"
+      },
+      "expiry": 1636888172358
+    },
+    "/Users/earther/opt/miniconda3/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/opt/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/opt/miniconda3",
+        "fileHash": "f9d13855fc3557c9b1b655b3ae500d0481bf97f56520dea42f1b59658fc35355b2b3ddd41e9291289228084c2eda935288505c568cc431c28e9a06f96f4c2878"
+      },
+      "expiry": 1636888172360
+    },
+    "/Users/earther/miniconda3/envs/dev2/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev2/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev2",
+        "fileHash": "a4dc2680adbcd79cd1721a268f3e3f194c9a3c603bb90b001b7f9137a8e7a1a32a28d9d10d34f7c65ec57a2928d1fcab9896230e3209737c580f252a407c999e"
+      },
+      "expiry": 1636888172362
+    },
+    "/opt/homebrew/opt/python@3.9/bin/python3.9.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.9.7 64-bit",
+        "hash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16-cadf91648175d44624832ac992901ed0"
+      },
+      "expiry": 1636888172501
+    },
+    "CONDA_ENVIRONMENTS": {
+      "data": [
+        {
+          "name": "base",
+          "path": "/Users/earther/miniconda3"
+        },
+        {
+          "name": "dev",
+          "path": "/Users/earther/miniconda3/envs/dev"
+        },
+        {
+          "name": "dev2",
+          "path": "/Users/earther/miniconda3/envs/dev2"
+        },
+        {
+          "name": "dev36",
+          "path": "/Users/earther/miniconda3/envs/dev36"
+        },
+        {
+          "name": "miniconda3",
+          "path": "/Users/earther/opt/miniconda3"
+        }
+      ]
+    },
+    "INTERPRETERS_CACHE_v3_CondaEnvFileService": [
+      {
+        "architecture": 3,
+        "path": "/Users/earther/opt/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/opt/miniconda3",
+        "fileHash": "f9d13855fc3557c9b1b655b3ae500d0481bf97f56520dea42f1b59658fc35355b2b3ddd41e9291289228084c2eda935288505c568cc431c28e9a06f96f4c2878",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/opt/miniconda3",
+        "envName": "miniconda3"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3",
+        "fileHash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3",
+        "envName": "base"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.8-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 8,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.8-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev",
+        "fileHash": "fb222ed94f942bb83c311ebd685ec878c93aa707834accb877018a4f58554b4aeaac43683d104d7fd4b7ddec11f3a735e449891b87c261cc7d0f1dc78beb994f",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3/envs/dev",
+        "envName": "dev"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev2/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev2",
+        "fileHash": "a4dc2680adbcd79cd1721a268f3e3f194c9a3c603bb90b001b7f9137a8e7a1a32a28d9d10d34f7c65ec57a2928d1fcab9896230e3209737c580f252a407c999e",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3/envs/dev2",
+        "envName": "dev2"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev36/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.6.13-final",
+          "major": 3,
+          "minor": 6,
+          "patch": 13,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.6.13-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev36",
+        "fileHash": "e0c3598dad56e91d3b4ba43ad03a5024d7f21e96fc878484f29a6a01dd611b118a1d21815faa5a464a6eae8089af0438a404e98292a9173f92f648d3f53ab632",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3/envs/dev36",
+        "envName": "dev36"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_CondaEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3",
+        "fileHash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3",
+        "envName": "base"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.8-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 8,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.8-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev",
+        "fileHash": "fb222ed94f942bb83c311ebd685ec878c93aa707834accb877018a4f58554b4aeaac43683d104d7fd4b7ddec11f3a735e449891b87c261cc7d0f1dc78beb994f",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3/envs/dev",
+        "envName": "dev"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev2/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev2",
+        "fileHash": "a4dc2680adbcd79cd1721a268f3e3f194c9a3c603bb90b001b7f9137a8e7a1a32a28d9d10d34f7c65ec57a2928d1fcab9896230e3209737c580f252a407c999e",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3/envs/dev2",
+        "envName": "dev2"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev36/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.6.13-final",
+          "major": 3,
+          "minor": 6,
+          "patch": 13,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.6.13-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev36",
+        "fileHash": "e0c3598dad56e91d3b4ba43ad03a5024d7f21e96fc878484f29a6a01dd611b118a1d21815faa5a464a6eae8089af0438a404e98292a9173f92f648d3f53ab632",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3/envs/dev36",
+        "envName": "dev36"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/opt/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/opt/miniconda3",
+        "fileHash": "f9d13855fc3557c9b1b655b3ae500d0481bf97f56520dea42f1b59658fc35355b2b3ddd41e9291289228084c2eda935288505c568cc431c28e9a06f96f4c2878",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/opt/miniconda3",
+        "envName": "miniconda3"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3",
+        "fileHash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/Users/earther/miniconda3",
+        "envName": "base"
+      }
+    ],
+    "/usr/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.9-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 9,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.9-final"
+        },
+        "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a"
+      },
+      "expiry": 1636888181897
+    },
+    "INTERPRETERS_CACHE_v3_KnownPathsService": [
+      {
+        "architecture": 3,
+        "path": "/opt/homebrew/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "cb62e934e197a75ecfd1a434aa7c1976d9162c4f01d41d35ef4763b2172648f68228ec97816b0f3f1f7294345468704c5cd6d63886d0ec0c261086b73ce82d30",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/opt/homebrew/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "e1aecacb481d9eeb0f5abee05a35052711df42d56b57e7579495266feee3f9cde2d68e58be70ea39eb1bba855defc44f2ed292fb88554e302be28be62a8bc441",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.9-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 9,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.9-final"
+        },
+        "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/opt/homebrew/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "cb62e934e197a75ecfd1a434aa7c1976d9162c4f01d41d35ef4763b2172648f68228ec97816b0f3f1f7294345468704c5cd6d63886d0ec0c261086b73ce82d30",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/opt/homebrew/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.7-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.7-final"
+        },
+        "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "e1aecacb481d9eeb0f5abee05a35052711df42d56b57e7579495266feee3f9cde2d68e58be70ea39eb1bba855defc44f2ed292fb88554e302be28be62a8bc441",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.18-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 18,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.18-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.9-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 9,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.9-final"
+        },
+        "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8",
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "type": "Unknown"
+      }
+    ],
+    "PipEnvInformation": [],
+    "/Users/earther/miniconda3/envs/dev/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.8.8 64-bit ('dev': conda)",
+        "hash": "fb222ed94f942bb83c311ebd685ec878c93aa707834accb877018a4f58554b4aeaac43683d104d7fd4b7ddec11f3a735e449891b87c261cc7d0f1dc78beb994f-b4953ed5bdeb32438ea7c3c6b0dc7924"
+      },
+      "expiry": 1628737969380
+    },
+    "/Users/earther/miniconda3/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.9.1 64-bit ('base': conda)",
+        "hash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1-eaf36f03935aa4ef3cab8fd7733fbc73"
+      },
+      "expiry": 1628737969381
+    },
+    "/Users/earther/miniconda3/envs/dev2/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 2.7.18 64-bit ('dev2': conda)",
+        "hash": "a4dc2680adbcd79cd1721a268f3e3f194c9a3c603bb90b001b7f9137a8e7a1a32a28d9d10d34f7c65ec57a2928d1fcab9896230e3209737c580f252a407c999e-4ac5c08340c63cb0ecf91ab6a20f7ceb"
+      },
+      "expiry": 1628737969382
+    },
+    "/Users/earther/opt/miniconda3/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.9.1 64-bit ('miniconda3': conda)",
+        "hash": "f9d13855fc3557c9b1b655b3ae500d0481bf97f56520dea42f1b59658fc35355b2b3ddd41e9291289228084c2eda935288505c568cc431c28e9a06f96f4c2878-aa6897f9a5e79f68839b4ce2dced4cce"
+      },
+      "expiry": 1628737969383
+    },
+    "/Users/earther/miniconda3/envs/dev36/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.6.13 64-bit ('dev36': conda)",
+        "hash": "e0c3598dad56e91d3b4ba43ad03a5024d7f21e96fc878484f29a6a01dd611b118a1d21815faa5a464a6eae8089af0438a404e98292a9173f92f648d3f53ab632-b09d3b68a4aa36b4af74adbf73986552"
+      },
+      "expiry": 1628737969384
+    },
+    "/opt/homebrew/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.9.7 64-bit",
+        "hash": "cb62e934e197a75ecfd1a434aa7c1976d9162c4f01d41d35ef4763b2172648f68228ec97816b0f3f1f7294345468704c5cd6d63886d0ec0c261086b73ce82d30-25aa719d957fe33b9d5fb37fe0147eb9"
+      },
+      "expiry": 1636892420585
+    },
+    "/usr/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.8.9 64-bit",
+        "hash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a-3d4ead84d1c7b2b787f9fe5c00af5c4b"
+      },
+      "expiry": 1636892420602
+    },
+    "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 2.7.18 64-bit",
+        "hash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a-69fb1ba72eedfe31e0da4ed266c749a9"
+      },
+      "expiry": 1636888172115
+    },
+    "/usr/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 2.7.18 64-bit",
+        "hash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a-9a60611c09804b9e70d3c590c829cef6"
+      },
+      "expiry": 1636892420589
+    },
+    "InterpreterAutoSeletionRule-system": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.7-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 7,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.7-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+      "type": "Unknown",
+      "displayName": "Python 3.9.7 64-bit"
+    },
+    "/Users/earther/miniconda3/envs/dev/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "fb222ed94f942bb83c311ebd685ec878c93aa707834accb877018a4f58554b4aeaac43683d104d7fd4b7ddec11f3a735e449891b87c261cc7d0f1dc78beb994f",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/earther/miniconda3/envs/dev/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.8.8-final",
+            "major": 3,
+            "minor": 8,
+            "patch": 8,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.8.8-final"
+          },
+          "sysPrefix": "/Users/earther/miniconda3/envs/dev",
+          "fileHash": "fb222ed94f942bb83c311ebd685ec878c93aa707834accb877018a4f58554b4aeaac43683d104d7fd4b7ddec11f3a735e449891b87c261cc7d0f1dc78beb994f",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/Users/earther/miniconda3/envs/dev",
+          "envName": "dev",
+          "displayName": "Python 3.8.8 64-bit ('dev': conda)"
+        }
+      },
+      "expiry": 1628737969437
+    },
+    "/Users/earther/miniconda3/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/earther/miniconda3/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.9.1-final",
+            "major": 3,
+            "minor": 9,
+            "patch": 1,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.9.1-final"
+          },
+          "sysPrefix": "/Users/earther/miniconda3",
+          "fileHash": "03024c7026fb5daa32d8235af80235002c3c3640163250c34561e0332ce916313569015580ade4bf5de3a1888c101d1c8531c7f3b3217405e5b3e63445ea10c1",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/Users/earther/miniconda3",
+          "envName": "base",
+          "displayName": "Python 3.9.1 64-bit ('base': conda)"
+        }
+      },
+      "expiry": 1628737969439
+    },
+    "/Users/earther/miniconda3/envs/dev2/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "a4dc2680adbcd79cd1721a268f3e3f194c9a3c603bb90b001b7f9137a8e7a1a32a28d9d10d34f7c65ec57a2928d1fcab9896230e3209737c580f252a407c999e",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/earther/miniconda3/envs/dev2/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "2.7.18-final",
+            "major": 2,
+            "minor": 7,
+            "patch": 18,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "2.7.18-final"
+          },
+          "sysPrefix": "/Users/earther/miniconda3/envs/dev2",
+          "fileHash": "a4dc2680adbcd79cd1721a268f3e3f194c9a3c603bb90b001b7f9137a8e7a1a32a28d9d10d34f7c65ec57a2928d1fcab9896230e3209737c580f252a407c999e",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/Users/earther/miniconda3/envs/dev2",
+          "envName": "dev2",
+          "displayName": "Python 2.7.18 64-bit ('dev2': conda)"
+        }
+      },
+      "expiry": 1628737969441
+    },
+    "/Users/earther/opt/miniconda3/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "f9d13855fc3557c9b1b655b3ae500d0481bf97f56520dea42f1b59658fc35355b2b3ddd41e9291289228084c2eda935288505c568cc431c28e9a06f96f4c2878",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/earther/opt/miniconda3/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.9.1-final",
+            "major": 3,
+            "minor": 9,
+            "patch": 1,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.9.1-final"
+          },
+          "sysPrefix": "/Users/earther/opt/miniconda3",
+          "fileHash": "f9d13855fc3557c9b1b655b3ae500d0481bf97f56520dea42f1b59658fc35355b2b3ddd41e9291289228084c2eda935288505c568cc431c28e9a06f96f4c2878",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/Users/earther/opt/miniconda3",
+          "envName": "miniconda3",
+          "displayName": "Python 3.9.1 64-bit ('miniconda3': conda)"
+        }
+      },
+      "expiry": 1628737969443
+    },
+    "/Users/earther/miniconda3/envs/dev36/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "e0c3598dad56e91d3b4ba43ad03a5024d7f21e96fc878484f29a6a01dd611b118a1d21815faa5a464a6eae8089af0438a404e98292a9173f92f648d3f53ab632",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/earther/miniconda3/envs/dev36/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.6.13-final",
+            "major": 3,
+            "minor": 6,
+            "patch": 13,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.6.13-final"
+          },
+          "sysPrefix": "/Users/earther/miniconda3/envs/dev36",
+          "fileHash": "e0c3598dad56e91d3b4ba43ad03a5024d7f21e96fc878484f29a6a01dd611b118a1d21815faa5a464a6eae8089af0438a404e98292a9173f92f648d3f53ab632",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/Users/earther/miniconda3/envs/dev36",
+          "envName": "dev36",
+          "displayName": "Python 3.6.13 64-bit ('dev36': conda)"
+        }
+      },
+      "expiry": 1628737969445
+    },
+    "/opt/homebrew/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "cb62e934e197a75ecfd1a434aa7c1976d9162c4f01d41d35ef4763b2172648f68228ec97816b0f3f1f7294345468704c5cd6d63886d0ec0c261086b73ce82d30",
+        "info": {
+          "architecture": 3,
+          "path": "/opt/homebrew/bin/python3",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.9.7-final",
+            "major": 3,
+            "minor": 9,
+            "patch": 7,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.9.7-final"
+          },
+          "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+          "fileHash": "cb62e934e197a75ecfd1a434aa7c1976d9162c4f01d41d35ef4763b2172648f68228ec97816b0f3f1f7294345468704c5cd6d63886d0ec0c261086b73ce82d30",
+          "type": "Unknown",
+          "displayName": "Python 3.9.7 64-bit"
+        }
+      },
+      "expiry": 1636892420651
+    },
+    "/usr/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/bin/python3",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.8.9-final",
+            "major": 3,
+            "minor": 8,
+            "patch": 9,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.8.9-final"
+          },
+          "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8",
+          "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+          "type": "Unknown",
+          "displayName": "Python 3.8.9 64-bit"
+        }
+      },
+      "expiry": 1636892420662
+    },
+    "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "info": {
+          "architecture": 3,
+          "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "2.7.18-final",
+            "major": 2,
+            "minor": 7,
+            "patch": 18,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "2.7.18-final"
+          },
+          "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+          "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+          "type": "Unknown",
+          "displayName": "Python 2.7.18 64-bit"
+        }
+      },
+      "expiry": 1636888172320
+    },
+    "/usr/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "2.7.18-final",
+            "major": 2,
+            "minor": 7,
+            "patch": 18,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "2.7.18-final"
+          },
+          "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+          "fileHash": "edbbc82e383a5c48a0884a6e5c8e7c6689484d5322d147b770a5311bfab97c0d8e3e4c035e5ea83fce709787e6b580a17646c065abce94de23644f8f1caf1b0a",
+          "type": "Unknown",
+          "displayName": "Python 2.7.18 64-bit"
+        }
+      },
+      "expiry": 1636892420656
+    },
+    "InterpreterAutoSeletionRule-cachedInterpreters": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.7-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 7,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.7-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+      "type": "Unknown",
+      "displayName": "Python 3.9.7 64-bit"
+    },
+    "ProposeLSBanner": false,
+    "/Users/earther/miniconda3/envs/dev/bin/python3.8.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev/bin/python3.8",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.8-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 8,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.8-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev",
+        "fileHash": "e543947c9c8cd6e36df7612348fa790c1e06317cfdcd0b601fbd8563e01de9c56bb73efd010dd22ae55fe17313669a82864443396d186c1218632a4f751d147f"
+      },
+      "expiry": 1629813644465
+    },
+    "/Users/earther/miniconda3/envs/dev/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/earther/miniconda3/envs/dev/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.8-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 8,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.8-final"
+        },
+        "sysPrefix": "/Users/earther/miniconda3/envs/dev",
+        "fileHash": "98c10d60e257713f79b9c3a39b813ee448c92a65234d59ba476b1ec124977f3c1e8d570200a1d1e9c47070749172e1543c8effd3720c808f1df964ae6f99f08d"
+      },
+      "expiry": 1629813644498
+    }
+  },
+  "coc-python|/Users/earther/fun/2_algo": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:74833ea9893aaa3b02f24cebf199a928": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:74833ea9893aaa3b02f24cebf199a928": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/fun/2_algo": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/fun/bitcoin": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:a6090456c003ee8d191477c95eab6264": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:a6090456c003ee8d191477c95eab6264": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/fun/bitcoin": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Applications/Postgres.app/Contents/Versions/14/bin": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:1bb62be12b14a64c2c81b18a04b622fe": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:1bb62be12b14a64c2c81b18a04b622fe": [],
+    "autoSelectedWorkspacePythonInterpreter-/Applications/Postgres.app/Contents/Versions/14/bin": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/fun/6_learn": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:9f9418dd446f69476461dbea7a88ce62": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:9f9418dd446f69476461dbea7a88ce62": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/fun/6_learn": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/temp/asciinema": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:c67b1873271cc59b73899f95a07de0f2": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:c67b1873271cc59b73899f95a07de0f2": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/temp/asciinema": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/temp": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:ffca408e9a7526552977c2cb9fc140e2": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:ffca408e9a7526552977c2cb9fc140e2": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/temp": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/temp/app/back-end": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:36988c7c01cff85315d7a48101cba8ff": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:36988c7c01cff85315d7a48101cba8ff": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/temp/app/back-end": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:01083aa81dacbb565afab7e4132048bd": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:01083aa81dacbb565afab7e4132048bd": []
+  },
+  "coc-python|/Users/earther/fun/0_tstream": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:03620746425ef850548eee442fd4b92c": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:03620746425ef850548eee442fd4b92c": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/fun/0_tstream": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService": []
+  },
+  "coc-python|/Users/earther/temp/metabase": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:d46e5ea9d376414c11a821f4e61e47d2": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:d46e5ea9d376414c11a821f4e61e47d2": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/temp/metabase": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/temp/python": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:e0ceb5f897049c7150075201d02702ad": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:e0ceb5f897049c7150075201d02702ad": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/temp/python": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/Desktop/python": {
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:9a937c047fa437d8df2d925be9bcb20c": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:9a937c047fa437d8df2d925be9bcb20c": []
+  },
+  "coc-python|/Users/earther/fun/3_rtdraw": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:a2f18a6f439fabb04cfc0c02a84be496": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:a2f18a6f439fabb04cfc0c02a84be496": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/fun/3_rtdraw": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.6-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 6,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.6-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "485d4bc71725e8af6fe956d89ca60d490dc7aca0826782b4138363865d00e81fe3c682536a42c79953e47cb4d4c1448a0f859d276da8e4ec6d40cb8bfc497f4f",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/earther/Downloads": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:b323b984103a1288b3bd5f51f2195f28": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:b323b984103a1288b3bd5f51f2195f28": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/earther/Downloads": {
+      "architecture": 3,
+      "path": "/opt/homebrew/opt/python@3.9/bin/python3.9",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.9.7-final",
+        "major": 3,
+        "minor": 9,
+        "patch": 7,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.9.7-final"
+      },
+      "sysPrefix": "/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "78017da9bab3721a8677c02af2b21d9b22c32c24313aac2520ba29e763720983d5e4fae84715e02b74e8f8ac5f90158a93c174b6bffa2efb7734474b464fce16",
+      "type": "Unknown",
+      "displayName": "Python 3.9.7 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  }
+}

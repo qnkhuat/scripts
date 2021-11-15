@@ -21,6 +21,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
+Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
 
 call plug#end()
 

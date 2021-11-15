@@ -102,7 +102,7 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH" # this is clang homebrew ARM-nati
 #export PATH="/usr/local/opt/llvm/bin:$PATH" # intel clang
 #export LDFLAGS="-L/usr/local/opt/llvm/lib"
 #export CPPFLAGS="-I/usr/local/opt/llvm/include"
-export PATH="$PATH:/Users/earther/flutter/bin"
+export PATH="$PATH:/Users/earther/.emacs.d/bin"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export GOPATH="$HOME/go" # go home package
@@ -122,6 +122,9 @@ alias pomo="thyme"
 alias vim="nvim"
 alias lein="/usr/local/bin/lein"
 alias code="code-insiders"
+alias emacsd="/opt/homebrew/bin/emacs --daemon"
+alias emacs="/opt/homebrew/bin/emacsclient -c -a 'emacs'"
+
 #alias node="n exec 14 node"
 #alias npm="n exec 14 npm"
 

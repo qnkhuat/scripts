@@ -4,7 +4,10 @@ Plug 'preservim/nerdtree'
 " File word in all files
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Git wrapper
 Plug 'tpope/vim-fugitive'
+" Show git diff markers
+Plug 'airblade/vim-gitgutter'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
@@ -24,6 +27,14 @@ Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
 
 call plug#end()
+
+" ----------------------------------------
+" PLUGIN: vim-gitgutter
+" ----------------------------------------
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
 
 " ----------------------------------------
 " PLUGIN: conjure
@@ -52,7 +63,7 @@ nnoremap D :ConjureDoc<CR>
 " ----------------------------------------
 " PLUGIN: clojure-vim/clojure.vim
 " ----------------------------------------
-let g:clojure_align_multiline_strings = 1
+"let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']

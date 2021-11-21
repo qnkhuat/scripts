@@ -25,6 +25,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
+Plug 'tpope/vim-fireplace', {'for': ['clojure']}
 
 call plug#end()
 
@@ -34,7 +35,6 @@ call plug#end()
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-
 
 " ----------------------------------------
 " PLUGIN: conjure
@@ -47,10 +47,6 @@ let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
 " copy the function under cursor to the default register
 nmap ts :execute "ConjureEval (symbol (var " . expand("<cword>") . "))"<cr>
-" execute a test case
-nmap tt :execute "ConjureEval (clojure.test/test-vars [#'" . expand("<cword>") . "])"<cr>
-" execute test for a namespace
-nmap tn :execute "ConjureEval (clojure.test/run-tests ' " . expand("<cword>") . ")"<cr>
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er
@@ -114,7 +110,7 @@ set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 set splitright            " split the new file open on the right
-set colorcolumn=80
+"set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 " Auto remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e

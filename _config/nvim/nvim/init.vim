@@ -24,20 +24,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
-Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
-Plug 'tpope/vim-fireplace', {'for': ['clojure']}
+"Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
+"Plug 'tpope/vim-fireplace', {'for': ['clojure']}
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
 " ----------------------------------------
-" PLUGIN: vim-gitgutter
+" PLUGIN-vim-gitgutter
 " ----------------------------------------
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " ----------------------------------------
-" PLUGIN: conjure
+" PLUGIN-conjure
 " ----------------------------------------
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d"
@@ -57,7 +58,7 @@ nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
 
 " ----------------------------------------
-" PLUGIN: clojure-vim/clojure.vim
+" PLUGIN-clojure-vim/clojure.vim
 " ----------------------------------------
 "let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
@@ -68,19 +69,28 @@ let g:clojure_maxlines = 0
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
 " ----------------------------------------
-" PLUGIN : vim-fugitive
+" PLUGIN-vim-easy-align
+" ----------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+map <C-a> ga-<space><CR>
+
+" ----------------------------------------
+" PLUGIN-vim-fugitive
 " ----------------------------------------
 nnoremap B :Git blame<CR>
 
 " ----------------------------------------
-"" PLUGIN : vim-gofmt
+"" PLUGIN-vim-gofmt
 " ----------------------------------------
 let g:gofmt_exe = '/opt/homebrew/bin/gofmt'
 let g:gofmt_on_save = 1
 let g:go_highlight_trailing_whitespace_error=0
 
 " ----------------------------------------
-" PLUGIN : coc.vim
+" PLUGIN-coc.vim
 " ----------------------------------------
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
@@ -88,7 +98,7 @@ highlight NormalFloat ctermbg=black guibg=black
 let g:coc_global_extensions = ['coc-conjure']
 
 " ----------------------------------------
-" PLUGIN : Auto pairs
+" PLUGIN-AutoPairs
 " ----------------------------------------
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 
@@ -147,7 +157,7 @@ noremap <C-h> <C-w>10>
 noremap <C-l> <C-w>10<
 
 " ----------------------------------------
-" PLUGIN : NERDTREE
+" PLUGIN-NERDTREE
 " ----------------------------------------
 " Auto turn on nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -165,7 +175,7 @@ set winfixwidth winfixheight
 set autoread
 
 " ----------------------------------------
-" PLUGIN : FZF
+" PLUGIN-FZF
 " ----------------------------------------
 nnoremap <silent> <C-p> :Files <cr>
 nnoremap <silent> <C-f> :Ag <cr>
@@ -197,7 +207,7 @@ if &term =~ "screen"
 endif
 
 " ----------------------------------------
-" PLUGIN: slime
+" PLUGIN-slime
 " ----------------------------------------
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
@@ -207,7 +217,7 @@ nmap cpp <Plug>SlimeParagraphSend
 nmap <c-c>v <Plug>SlimeConfig
 
 " ----------------------------------------
-" PLUGIN: rainbow_parentheses
+" PLUGIN-rainbow_parentheses
 " ----------------------------------------
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

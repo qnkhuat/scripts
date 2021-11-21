@@ -1,3 +1,6 @@
+call plug#begin()
+call plug#end()
+
 " Auto indent
 filetype plugin on
 filetype indent on

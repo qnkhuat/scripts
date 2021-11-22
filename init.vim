@@ -177,6 +177,7 @@ set autoread
 " ----------------------------------------
 " PLUGIN-FZF
 " ----------------------------------------
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <silent> <C-p> :Files <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>
@@ -187,24 +188,6 @@ nnoremap gb :BCommits<CR>
 
 " Shortcut to run a executable fiel
 nnoremap <C-b> :!clear && ./run.sh<Enter>
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
-  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-
-
-" ----------------------------------------
-" fix Tmux
-" ----------------------------------------
-set background=dark
-set t_Co=256
-
-if &term =~ "screen"
-  let &t_BE = "\e[?2004h"
-  let &t_BD = "\e[?2004l"
-  exec "set t_PS=\e[200~"
-  exec "set t_PE=\e[201~"
-endif
 
 " ----------------------------------------
 " PLUGIN-slime
@@ -242,3 +225,17 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',     'firebrick3'],
     \ ]
+
+" ----------------------------------------
+" fix Tmux
+" ----------------------------------------
+set background=dark
+set t_Co=256
+
+if &term =~ "screen"
+  let &t_BE = "\e[?2004h"
+  let &t_BD = "\e[?2004l"
+  exec "set t_PS=\e[200~"
+  exec "set t_PE=\e[201~"
+endif
+

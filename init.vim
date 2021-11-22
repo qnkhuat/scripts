@@ -156,6 +156,9 @@ nnoremap <C-j> <C-w>W
 noremap <C-h> <C-w>10>
 noremap <C-l> <C-w>10<
 
+" Copy to clipboard
+vnoremap cp :w !pbcopy<CR>
+
 " ----------------------------------------
 " PLUGIN-NERDTREE
 " ----------------------------------------

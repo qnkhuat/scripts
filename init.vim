@@ -56,6 +56,8 @@ xmap S o;; => <C-r>c<ESC><CR>
 nmap S o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
+nmap tn :execute "ConjureEval (clojure.test/run-tests ' " . expand("<cword>") . ")"<cr>
+nmap tt :execute "ConjureEval (clojure.test/test-vars [#'" . expand("<cword>") . "])"<cr>
 
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
@@ -180,7 +182,7 @@ set autoread
 " ----------------------------------------
 " PLUGIN-FZF
 " ----------------------------------------
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': ['--delimiter', '--nth 4..']}), <bang>0)
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 nnoremap <silent> <C-p> :Files <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>

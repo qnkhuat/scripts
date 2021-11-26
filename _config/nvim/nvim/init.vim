@@ -23,9 +23,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
+Plug 'Olical/aniseed'
+"Plug '/Users/earther/temp/conjure'
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
-"Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
-"Plug 'tpope/vim-fireplace', {'for': ['clojure']}
 Plug 'junegunn/vim-easy-align'
 
 call plug#end()
@@ -155,8 +155,8 @@ noremap + gg=G
 " mapping to swith between view points
 nnoremap <C-k> <C-w>w
 nnoremap <C-j> <C-w>W
-noremap <C-h> <C-w>10>
-noremap <C-l> <C-w>10<
+noremap <C-h> <C-w>10<
+noremap <C-l> <C-w>10>
 
 " Copy to clipboard
 vnoremap cp :w !pbcopy<CR>

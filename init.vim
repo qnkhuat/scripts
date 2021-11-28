@@ -22,9 +22,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'tweekmonster/gofmt.vim'
 
 " Clojure
-Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
-Plug 'Olical/aniseed'
-"Plug '/Users/earther/temp/conjure'
+"Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
+Plug '/Users/earther/temp/qnkhuat_conjure'
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 Plug 'junegunn/vim-easy-align'
 
@@ -56,8 +55,6 @@ xmap S o;; => <C-r>c<ESC><CR>
 nmap S o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
-nmap tn :execute "ConjureEval (clojure.test/run-tests ' " . expand("<cword>") . ")"<cr>
-nmap tt :execute "ConjureEval (clojure.test/test-vars [#'" . expand("<cword>") . "])"<cr>
 
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim

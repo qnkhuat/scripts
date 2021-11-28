@@ -107,6 +107,9 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export GOPATH="$HOME/go" # go home package
 
+# use gnu-sed
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
 # alias
 #alias ghc="stack ghc"
 alias g='googler -n 6'
@@ -131,12 +134,9 @@ alias emacs="/opt/homebrew/bin/emacsclient -c -a 'emacs'"
 echo "I code, Therefore I am" | cowsay -n
 motivate
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 local ret_status="%(?:%{$fg_bold[green]%}λ:%{$fg_bold[red]%}λ)"
 export PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

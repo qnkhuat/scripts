@@ -111,10 +111,7 @@ export GOPATH="$HOME/go" # go home package
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # alias
-#alias ghc="stack ghc"
 alias g='googler -n 6'
-#alias pip='pip3'
-#alias python='python3'
 alias intel="arch -x86_64"
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias brew="arch -arm64 brew"
@@ -127,6 +124,7 @@ alias lein="/usr/local/bin/lein"
 alias code="code-insiders"
 alias emacsd="/opt/homebrew/bin/emacs --daemon"
 alias emacs="/opt/homebrew/bin/emacsclient -c -a 'emacs'"
+alias cat="bat"
 
 #alias node="n exec 14 node"
 #alias npm="n exec 14 npm"

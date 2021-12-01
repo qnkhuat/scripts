@@ -19,7 +19,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jpalardy/vim-slime'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'tweekmonster/gofmt.vim'
+Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
 "Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
@@ -156,7 +156,7 @@ noremap <C-h> <C-w>10<
 noremap <C-l> <C-w>10>
 
 " Copy to clipboard
-vnoremap cp :w !pbcopy<CR>
+vnoremap cp "+y<CR>
 
 " ----------------------------------------
 " PLUGIN-NERDTREE
@@ -240,4 +240,3 @@ if &term =~ "screen"
   exec "set t_PS=\e[200~"
   exec "set t_PE=\e[201~"
 endif
-

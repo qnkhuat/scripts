@@ -19,3 +19,10 @@ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/goog
 # setup tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 wget https://raw.githubusercontent.com/qnkhuat/scripts/master/.tmux.conf -O ~/.tmux.conf
+
+# setup git config
+git config --global user.email "qn.khuat@gmail.com"
+git config --global user.name "Ngoc Khuat"
+git config --global pull.rebase true
+git config --global push.default current
+git config --global init.defaultBranch main

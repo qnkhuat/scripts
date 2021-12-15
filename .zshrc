@@ -71,6 +71,8 @@ ZSH_DISABLE_COMPFIX=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+
+
 source $ZSH/oh-my-zsh.sh
 
 # >>> conda initialize >>>
@@ -121,7 +123,7 @@ alias social="~/fun/scripts/social.sh"
 alias pomo="thyme"
 alias vim="nvim"
 alias lein="/usr/local/bin/lein"
-alias code="code-insiders"
+# alias code="code-insiders"
 alias emacsd="/opt/homebrew/bin/emacs --daemon"
 alias emacs="/opt/homebrew/bin/emacsclient -c -a 'emacs'"
 alias cat="bat"
@@ -132,9 +134,8 @@ alias cat="bat"
 echo "I code, Therefore I am" | cowsay -n
 motivate
 
-
 local ret_status="%(?:%{$fg_bold[green]%}λ:%{$fg_bold[red]%}λ)"
 export PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

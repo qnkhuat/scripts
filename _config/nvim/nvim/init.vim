@@ -1,7 +1,7 @@
 call plug#begin()
 
 Plug 'preservim/nerdtree'
-" File word in all files
+" Search stuffs in all files
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Git wrapper
@@ -22,14 +22,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
-"Plug 'Olical/conjure', {'tag': 'v4.25.0', 'for': ['clojure']}
-Plug '/Users/earther/temp/qnkhuat_conjure'
+"Plug 'Olical/conjure', {'branch': 'develop', 'for':['clojure']}
+Plug 'qnkhuat/conjure', {'for':['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
-" ----------------------------------------
+" ---------------------------------------
 " PLUGIN-vim-gitgutter
 " ----------------------------------------
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
@@ -42,7 +42,8 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d"
 let g:conjure#log#wrap = "true"
-let g:conjure#client#clojure#nrepl#eval#raw_out = "true"
+let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
+let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
 " copy the function under cursor to the default register
@@ -94,7 +95,6 @@ let g:go_highlight_trailing_whitespace_error=0
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
-let g:coc_global_extensions = ['coc-conjure']
 
 " ----------------------------------------
 " PLUGIN-AutoPairs
@@ -143,8 +143,6 @@ nmap 9 :set invnumber<CR>
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
-inoremap <C-j> :m '>+1<CR>gv=gv
-inoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 noremap + gg=G

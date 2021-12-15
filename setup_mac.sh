@@ -24,5 +24,5 @@ wget https://raw.githubusercontent.com/qnkhuat/scripts/master/.tmux.conf -O ~/.t
 git config --global user.email "qn.khuat@gmail.com"
 git config --global user.name "Ngoc Khuat"
 git config --global pull.rebase true
-git config --global push.default current
+git config --global push.default simple
 git config --global init.defaultBranch main

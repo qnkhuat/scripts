@@ -61,7 +61,6 @@ nnoremap D :ConjureDoc<CR>
 " PLUGIN-clojure-vim/clojure.vim
 " ----------------------------------------
 "let g:clojure_align_multiline_strings = 1
-let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']

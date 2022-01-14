@@ -157,6 +157,20 @@ noremap <C-l> <C-w>10>
 " Copy to clipboard
 vnoremap cp "+y<CR>
 
+
+" Make sure paste, delete doesn't update the yanked register
+nnoremap d "_d
+vnoremap d "_d
+" https://stackoverflow.com/questions/290465/how-to-paste-over-without-overwriting-register
+function! RestoreRegister()
+    let @" = s:restore_reg
+    if &clipboard == "unnamed"
+        let @* = s:restore_reg
+    endif
+    return ''
+endfunction
+vnoremap <silent> <expr> p <sid>Repl()
+
 " ----------------------------------------
 " PLUGIN-NERDTREE
 " ----------------------------------------

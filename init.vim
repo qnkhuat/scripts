@@ -158,9 +158,6 @@ noremap <C-l> <C-w>10>
 vnoremap cp "+y<CR>
 
 " Make sure paste, delete doesn't update the yanked register
-nnoremap d "_d
-vnoremap d "_d
-nnoremap x "_x
 vnoremap x "_x
 " https://stackoverflow.com/questions/290465/how-to-paste-over-without-overwriting-register
 function! RestoreRegister()

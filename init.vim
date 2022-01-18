@@ -158,7 +158,9 @@ noremap <C-l> <C-w>10>
 vnoremap cp "+y<CR>
 
 " Make sure paste, delete doesn't update the yanked register
-vnoremap x "_x
+nnoremap d "_d
+vnoremap d "_d
+
 " https://stackoverflow.com/questions/290465/how-to-paste-over-without-overwriting-register
 function! RestoreRegister()
   let @" = s:restore_reg

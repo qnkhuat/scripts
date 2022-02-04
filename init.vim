@@ -124,8 +124,6 @@ highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Key shortcut
-" macro key to m
-noremap m q
 noremap <Leader>A 100j
 noremap q ^
 noremap f e

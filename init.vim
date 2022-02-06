@@ -25,7 +25,6 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 "Plug 'Olical/conjure', {'branch': 'develop', 'for':['clojure']}
 Plug 'qnkhuat/conjure', {'for':['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
-Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -46,8 +45,6 @@ let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
-" copy the function under cursor to the default register
-nmap ts :execute "ConjureEval (symbol (var " . expand("<cword>") . "))"<cr>
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er
@@ -66,15 +63,6 @@ let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
 let g:clojure_maxlines = 0
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
-
-" ----------------------------------------
-" PLUGIN-vim-easy-align
-" ----------------------------------------
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-map <C-a> ga-<space><CR>
 
 " ----------------------------------------
 " PLUGIN-vim-fugitive

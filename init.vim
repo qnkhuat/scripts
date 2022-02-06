@@ -154,10 +154,10 @@ noremap <C-l> <C-w>10>
 " Copy to clipboard
 vnoremap cp "+y<CR>
 
-" Make sure paste, delete doesn't update the yanked register
+" Make sure these deletions are not replaced yanked register
+" use x for delete and replace yanks
 nnoremap d "_d
 vnoremap d "_d
-
 " https://stackoverflow.com/questions/290465/how-to-paste-over-without-overwriting-register
 function! RestoreRegister()
   let @" = s:restore_reg
@@ -174,19 +174,19 @@ vnoremap <silent> <expr> p <sid>Repl()
 " PLUGIN-NERDTREE
 " ----------------------------------------
 " Auto turn on nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open nerdtree
 map <S-p> :NERDTreeToggle<CR>
 " Show hidden files
 let NERDTreeShowHidden=1
 
 " Open file in Tree
-noremap t :NERDTreeFind<CR>
+noremap T :NERDTreeFind<CR>
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 " prevent nerdtree from resize panes when toggle
-set winfixwidth winfixheight
-set autoread
+"set winfixwidth winfixheight
+"set autoread
 
 " ----------------------------------------
 " PLUGIN-FZF

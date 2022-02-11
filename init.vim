@@ -22,8 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
-"Plug 'Olical/conjure', {'branch': 'develop', 'for':['clojure']}
-Plug 'qnkhuat/conjure', {'for':['clojure']}
+Plug 'Olical/conjure', {'branch': 'develop', 'for':['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 
 call plug#end()
@@ -125,6 +124,9 @@ noremap T :W<CR>
 nnoremap <C-u> <C-I>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+" Change Search forward to # and backward to *
+nnoremap # *
+nnoremap * #
 nmap 9 :set invnumber<CR>
 
 " noremap is non-recursive means it will be execute rightaway

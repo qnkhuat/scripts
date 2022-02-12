@@ -22,7 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
-Plug 'Olical/conjure', {'branch': 'develop', 'for':['clojure']}
+Plug 'Olical/conjure', {'for':['clojure']}
 Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 
 call plug#end()

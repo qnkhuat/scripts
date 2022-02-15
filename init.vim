@@ -182,7 +182,7 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 " PLUGIN-FZF
 " ----------------------------------------
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
-nnoremap <silent> <C-p> :Files <cr>
+nnoremap <silent> <C-p> :GFiles <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>
 " Show commits

@@ -6,6 +6,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+" Enable :GBrowse
+Plug 'tpope/vim-rhubarb'
 " Show git diff markers
 Plug 'airblade/vim-gitgutter'
 

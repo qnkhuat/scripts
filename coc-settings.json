@@ -5,6 +5,7 @@
   "javascript.suggestionActions.enabled": true,
   "typescript.suggestionActions.enabled": true,
   "coc.source.conjure.priority": 999999,
+  "list.previewSplitRight": true,
   "languageserver": {
     "clojure-lsp": {
       "command": "bash",

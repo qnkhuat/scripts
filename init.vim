@@ -52,8 +52,8 @@ nmap s <localleader>er
 " add result as comment to next line
 xmap S o;; => <C-r>c<ESC><CR>
 nmap S o;; => <C-r>c<ESC><CR>
-nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
+nnoremap cn :ConjureConnect<CR>
 
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
@@ -83,6 +83,11 @@ let g:go_highlight_trailing_whitespace_error=0
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> gt :call CocAction('jumpDefinition', 'tabe')<CR>
 
 " ----------------------------------------
 " PLUGIN-AutoPairs

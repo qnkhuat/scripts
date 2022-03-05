@@ -5,17 +5,17 @@
   "javascript.suggestionActions.enabled": true,
   "typescript.suggestionActions.enabled": true,
   "coc.source.conjure.priority": 999999,
-  "list.previewSplitRight": true,
+  "list.previewSplitRight": false,
   "languageserver": {
-    "clojure-lsp": {
-      "command": "bash",
-      "args": ["-c", "clojure-lsp"],
-      "filetypes": ["clojure"],
-      "rootPatterns": ["project.clj", "deps.edn"],
-      "additionalSchemes": ["jar", "zipfile"],
-      "trace.server": "verbose",
-      "disableDiagnostics": false,
-      "initializationOptions": {}
-    }
+    //"clojure-lsp": {
+    //  "command": "bash",
+    //  "args": ["-c", "clojure-lsp"],
+    //  "filetypes": ["clojure"],
+    //  "rootPatterns": ["project.clj", "deps.edn"],
+    //  "additionalSchemes": ["jar", "zipfile"],
+    //  "trace.server": "verbose",
+    //  "disableDiagnostics": false,
+    //  "initializationOptions": {}
+    //}
   }
 }

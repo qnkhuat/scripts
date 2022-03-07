@@ -45,7 +45,7 @@ let g:conjure#log#wrap = "true"
 let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
-let g:conjure#log#hud#height = 0.4
+let g:conjure#log#hud#height = 0.6
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er
@@ -81,6 +81,7 @@ let g:go_highlight_trailing_whitespace_error=0
 " ----------------------------------------
 " PLUGIN-coc.vim
 " ----------------------------------------
+" coc-conjure will make sure all suggestions, document of clojure code linked to coc-completion
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure']
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white

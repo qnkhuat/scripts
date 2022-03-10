@@ -46,6 +46,7 @@ let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.6
+let g:clojure_align_subforms = 1
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er

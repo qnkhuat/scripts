@@ -45,7 +45,7 @@ let g:conjure#log#wrap = "true"
 let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
-let g:conjure#log#hud#height = 0.6
+let g:conjure#log#hud#height = 0.45
 let g:clojure_align_subforms = 1
 " Eval
 xmap s <localleader>E
@@ -88,6 +88,7 @@ highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
@@ -174,6 +175,14 @@ function! s:Repl()
 endfunction
 vnoremap <silent> <expr> p <sid>Repl()
 
+" Prevent insert when press C-space
+noremap <NUL> <ESC>
+
+" Prevent from opening scratch preview window
+set completeopt-=preview
+
+" Quickly open a todo file
+command T :35vsp ~/.cache/todo.md
 " ----------------------------------------
 " PLUGIN-NERDTREE
 " ----------------------------------------

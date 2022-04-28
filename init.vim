@@ -12,6 +12,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'jiangmiao/auto-pairs'
+Plug 'bhurlow/vim-parinfer', {'for':['clojure']}
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
@@ -45,7 +46,7 @@ let g:conjure#log#wrap = "true"
 let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
-let g:conjure#log#hud#height = 0.45
+let g:conjure#log#hud#height = 0.4
 let g:clojure_align_subforms = 1
 " Eval
 xmap s <localleader>E

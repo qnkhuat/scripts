@@ -12,7 +12,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'bhurlow/vim-parinfer', {'for':['clojure']}
+Plug 'eraserhd/parinfer-rust', {'do':
+        \  'cargo build --release'}
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
@@ -67,6 +68,12 @@ let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
 let g:clojure_maxlines = 0
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
+
+" ----------------------------------------
+" PLUGIN-eraserhd/parinfer-rust
+" ----------------------------------------
+let g:parinfer_force_balance = v:false
+let g:parinfer_mode = 'paren'
 
 " ----------------------------------------
 " PLUGIN-vim-fugitive

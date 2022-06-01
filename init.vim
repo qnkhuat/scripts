@@ -25,7 +25,6 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
 Plug 'Olical/conjure', {'for':['clojure']}
-Plug 'clojure-vim/clojure.vim', {'for': ['clojure']}
 
 call plug#end()
 

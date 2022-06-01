@@ -20,8 +20,6 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 Plug 'leafgarland/typescript-vim', {'for': ['javascript']}
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['javascript']}
 
-Plug 'jpalardy/vim-slime'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
@@ -112,13 +110,14 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```'
 " ----------------------------------------
 filetype plugin on
 syntax on
+filetype plugin indent off
 set cursorline number ruler
 set mouse=a hls is ic
 set backspace=indent,eol,start
 set linespace=5 " better display on MacVim
 set smartcase ignorecase
 set smartindent           " auto indent at new line
-"set autoindent            " Indent according to previous line.
+set autoindent            " Indent according to previous line.
 set expandtab             " Use spaces instead of tabs.
 set softtabstop=2         " Tab key indents by 2 spaces.
 set tabstop=2

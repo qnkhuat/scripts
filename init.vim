@@ -59,11 +59,10 @@ nnoremap cn :ConjureConnect<CR>
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
 " ----------------------------------------
-"let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
-let g:clojure_maxlines = 0
+let g:clojure_maxlines = 100
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
 " ----------------------------------------
@@ -109,7 +108,6 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```'
 " ----------------------------------------
 filetype plugin on
 syntax on
-filetype plugin indent off
 set cursorline number ruler
 set mouse=a hls is ic
 set backspace=indent,eol,start

@@ -1,4 +1,6 @@
 call plug#begin()
+" Highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'preservim/nerdtree'
 " Search stuffs in all files
@@ -24,7 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
-Plug 'Olical/conjure', {'for':['clojure']}
+Plug 'Olical/conjure', {'for':['clojure'], 'tag': 'v4.36.0'}
 
 call plug#end()
 
@@ -59,6 +61,7 @@ nnoremap cn :ConjureConnect<CR>
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
 " ----------------------------------------
+let g:clojure_align_subforms = 0
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
@@ -87,7 +90,7 @@ let g:go_highlight_trailing_whitespace_error=0
 " PLUGIN-coc.vim
 " ----------------------------------------
 " coc-conjure will make sure all suggestions, document of clojure code linked to coc-completion
-let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure', 'coc-rust-analyzer']
 highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
@@ -203,7 +206,7 @@ let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 " prevent nerdtree from resize panes when toggle
 "set winfixwidth winfixheight
-"set autoread
+set autoread
 
 " ----------------------------------------
 " PLUGIN-FZF
@@ -223,8 +226,6 @@ nnoremap <C-b> :!clear && ./run.sh<Enter>
 " ----------------------------------------
 " PLUGIN-slime
 " ----------------------------------------
-let g:slime_target = "tmux"
-let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 xmap cpp <Plug>SlimeRegionSend
 nmap cpp <Plug>SlimeParagraphSend

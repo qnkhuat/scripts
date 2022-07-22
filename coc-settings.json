@@ -6,6 +6,7 @@
   "typescript.suggestionActions.enabled": true,
   "coc.source.conjure.priority": 999999,
   "list.previewSplitRight": false,
+  "python.analysis.typeCheckingMode": "off",
   "languageserver": {
     //"clojure-lsp": {
     //  "command": "bash",

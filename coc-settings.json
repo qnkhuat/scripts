@@ -2,21 +2,27 @@
   "diagnostic.enable": true,
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.checkCurrentLine": false,
-  "javascript.suggestionActions.enabled": true,
-  "typescript.suggestionActions.enabled": true,
   "coc.source.conjure.priority": 999999,
   "list.previewSplitRight": false,
+  "notification.disabledProgressSources": ["*"],
+  // js, ts
+  "javascript.suggestionActions.enabled": true,
+  "typescript.suggestionActions.enabled": true,
+  // rust
+  "rust-analyzer.inlayHints.enable": false,
+  // python
   "python.analysis.typeCheckingMode": "off",
+  "suggest.removeDuplicateItems": true,
   "languageserver": {
-    //"clojure-lsp": {
-    //  "command": "bash",
-    //  "args": ["-c", "clojure-lsp"],
-    //  "filetypes": ["clojure"],
-    //  "rootPatterns": ["project.clj", "deps.edn"],
-    //  "additionalSchemes": ["jar", "zipfile"],
-    //  "trace.server": "verbose",
-    //  "disableDiagnostics": false,
-    //  "initializationOptions": {}
-    //}
+    "clojure-lsp": {
+      "command": "bash",
+      "args": ["-c", "clojure-lsp"],
+      "filetypes": ["clojure"],
+      "rootPatterns": ["project.clj", "deps.edn"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "trace.server": "verbose",
+      "disableDiagnostics": false,
+      "initializationOptions": {}
+    }
   }
 }

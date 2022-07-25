@@ -25,6 +25,9 @@ Plug 'maxmellon/vim-jsx-pretty', {'for': ['javascript']}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
+" Copy code between buffers
+Plug 'jpalardy/vim-slime'
+
 " Clojure
 Plug 'Olical/conjure', {'for':['clojure'], 'tag': 'v4.36.0'}
 
@@ -109,12 +112,12 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```'
 " ----------------------------------------
 " Set everything
 " ----------------------------------------
+let g:python_recommended_style = 0
 filetype plugin on
 syntax on
 set cursorline number ruler
 set mouse=a hls is ic
 set backspace=indent,eol,start
-set linespace=5 " better display on MacVim
 set smartcase ignorecase
 set smartindent           " auto indent at new line
 set autoindent            " Indent according to previous line.
@@ -226,6 +229,7 @@ nnoremap <C-b> :!clear && ./run.sh<Enter>
 " ----------------------------------------
 " PLUGIN-slime
 " ----------------------------------------
+let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 xmap cpp <Plug>SlimeRegionSend
 nmap cpp <Plug>SlimeParagraphSend

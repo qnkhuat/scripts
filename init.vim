@@ -14,8 +14,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'eraserhd/parinfer-rust', {'do':
-        \  'cargo build --release'}
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
@@ -29,7 +28,7 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for':['clojure'], 'tag': 'v4.36.0'}
+Plug 'Olical/conjure', {'for': ['clojure', 'lisp'], 'tag': 'v4.40.0'}
 
 call plug#end()
 
@@ -43,6 +42,7 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 " ----------------------------------------
 " PLUGIN-conjure
 " ----------------------------------------
+let g:conjure#client#scheme#stdio#command = "scheme"
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d"
 let g:conjure#log#wrap = "true"
@@ -183,6 +183,7 @@ function! s:Repl()
     let s:restore_reg = @"
     return "p@=RestoreRegister()\<cr>"
 endfunction
+
 vnoremap <silent> <expr> p <sid>Repl()
 
 " Prevent insert when press C-space
@@ -193,6 +194,9 @@ set completeopt-=preview
 
 " Quickly open a todo file
 command T :35vsp ~/.cache/todo.md
+command S :35vsp ~/.cache/scripts.sh
+
+
 " ----------------------------------------
 " PLUGIN-NERDTREE
 " ----------------------------------------
@@ -202,6 +206,8 @@ command T :35vsp ~/.cache/todo.md
 map <S-p> :NERDTreeToggle<CR>
 " Show hidden files
 let NERDTreeShowHidden=1
+"  https://github.com/preservim/nerdtree/issues/1321
+let g:NERDTreeMinimalMenu=1
 
 " Open file in Tree
 noremap T :NERDTreeFind<CR>

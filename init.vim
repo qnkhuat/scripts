@@ -28,7 +28,7 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'lisp'], 'tag': 'v4.40.0'}
+Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python'], 'tag': 'v4.40.0'}
 
 call plug#end()
 

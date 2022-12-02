@@ -17,9 +17,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'kien/rainbow_parentheses.vim'
 
-Plug 'pangloss/vim-javascript', {'for': ['javascript']}
-Plug 'leafgarland/typescript-vim', {'for': ['javascript']}
-Plug 'maxmellon/vim-jsx-pretty', {'for': ['javascript']}
+" all in one language highlight
+Plug 'sheerun/vim-polyglot'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}

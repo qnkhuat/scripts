@@ -19,6 +19,7 @@ Plug 'kien/rainbow_parentheses.vim'
 
 " all in one language highlight
 Plug 'sheerun/vim-polyglot'
+Plug 'evanleck/vim-svelte', {'for': 'svelte'}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
@@ -28,6 +29,8 @@ Plug 'jpalardy/vim-slime'
 
 " Clojure
 Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python'], 'tag': 'v4.40.0'}
+
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -66,7 +69,7 @@ nnoremap cn :ConjureConnect<CR>
 let g:clojure_align_subforms = 0
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog']
 let g:clojure_maxlines = 100
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
@@ -93,7 +96,6 @@ let g:go_highlight_trailing_whitespace_error=0
 " ----------------------------------------
 " coc-conjure will make sure all suggestions, document of clojure code linked to coc-completion
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure', 'coc-rust-analyzer']
-highlight CocErrorFloat ctermfg=yellow ctermbg=gray
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
 nmap <silent> gr <Plug>(coc-references)
@@ -266,6 +268,12 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',     'firebrick3'],
     \ ]
+
+" ----------------------------------------
+" PLUGIN-copilot
+" ----------------------------------------
+"disable github copilot
+let g:copilot_enabled = v:false
 
 " ----------------------------------------
 " fix Tmux

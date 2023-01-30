@@ -16,7 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'kien/rainbow_parentheses.vim'
-
+Plug 'tpope/vim-surround'
 " all in one language highlight
 Plug 'sheerun/vim-polyglot'
 Plug 'evanleck/vim-svelte', {'for': 'svelte'}
@@ -47,18 +47,19 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 let g:conjure#client#scheme#stdio#command = "scheme"
 let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d"
-let g:conjure#log#wrap = "true"
+let g:conjure#log#wrap = v:true
 let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
+let g:conjure#log#hud#anchor = "SE"
 let g:clojure_align_subforms = 1
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er
 " add result as comment to next line
-xmap S o;; => <C-r>c<ESC><CR>
-nmap S o;; => <C-r>c<ESC><CR>
+xmap <C-s> o;; => <C-r>c<ESC><CR>
+nmap <C-s> o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 nnoremap D :ConjureDoc<CR>
 nnoremap cn :ConjureConnect<CR>
@@ -129,6 +130,8 @@ set shiftround            " >> indents to next multiple of 'shiftwidth'.
 set shiftwidth=2          " >> indents by 2 spaces.
 set splitright            " split the new file open on the right
 set updatetime=300
+set foldmethod=indent
+set nofoldenable
 "set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 " Auto remove trailing whitespace
@@ -144,7 +147,7 @@ noremap J 10j
 noremap K 10k
 noremap L 10l
 noremap H 10h
-noremap 0 :nohls<CR>
+noremap ) :nohls<CR>
 noremap T :W<CR>
 " Opposite of <C-o>
 nnoremap <C-u> <C-I>
@@ -153,7 +156,9 @@ nnoremap <S-Tab> gT
 " Change Search forward to # and backward to *
 nnoremap # *
 nnoremap * #
-nmap 9 :set invnumber<CR>
+nmap ( :set invnumber<CR>
+
+"nnoremap S :w<CR>
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down

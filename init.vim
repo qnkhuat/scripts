@@ -28,11 +28,19 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python'], 'tag': 'v4.40.0'}
+Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python'], 'tag': 'v4.44.2'}
+Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
 
 Plug 'github/copilot.vim'
 
+" Decompile java class files
 call plug#end()
+
+" ---------------------------------------
+" PLUGIN-vim-polyglot
+" ----------------------------------------
+let g:python_highlight_space_errors = 0
+
 
 " ---------------------------------------
 " PLUGIN-vim-gitgutter
@@ -71,7 +79,7 @@ let g:clojure_align_subforms = 0
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog']
-let g:clojure_maxlines = 100
+let g:clojure_maxlines = 50
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
 " ----------------------------------------
@@ -99,6 +107,7 @@ let g:go_highlight_trailing_whitespace_error=0
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure', 'coc-rust-analyzer']
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
+nmap <silent> cr <Plug>(coc-rename)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gd <Plug>(coc-definition)
@@ -138,7 +147,7 @@ highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Key shortcut
-" Macro
+" record macro, use @ to execute
 noremap ! q
 noremap q ^
 noremap f e
@@ -158,7 +167,7 @@ nnoremap # *
 nnoremap * #
 nmap ( :set invnumber<CR>
 
-"nnoremap S :w<CR>
+nnoremap S :w<CR>
 
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
@@ -202,7 +211,6 @@ set completeopt-=preview
 command T :35vsp ~/.cache/todo.md
 command S :35vsp ~/.cache/scripts.sh
 
-
 " ----------------------------------------
 " PLUGIN-NERDTREE
 " ----------------------------------------
@@ -223,6 +231,14 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 "set winfixwidth winfixheight
 set autoread
 
+function! DecompileJava()
+  set ft=java
+  set ro
+  execute '1,$d'
+  execute '0r !procyon-decompiler ' . shellescape(expand('%'), 1)
+endfunction
+
+autocmd BufReadPost *.class call DecompileJava()
 " ----------------------------------------
 " PLUGIN-FZF
 " ----------------------------------------

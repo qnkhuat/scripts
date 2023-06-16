@@ -29,7 +29,7 @@ Plug 'jpalardy/vim-slime'
 
 " Clojure
 Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python'], 'tag': 'v4.44.2'}
-Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
+"Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
 
 Plug 'github/copilot.vim'
 

@@ -36,6 +36,101 @@ Plug 'github/copilot.vim'
 " Decompile java class files
 call plug#end()
 
+" ----------------------------------------
+" Set everything
+" ----------------------------------------
+let g:python_recommended_style = 0
+filetype plugin on
+syntax on
+set cursorline number ruler
+set mouse=a hls is ic
+set backspace=indent,eol,start
+set smartcase ignorecase
+set smartindent           " auto indent at new line
+set autoindent            " Indent according to previous line.
+set expandtab             " Use spaces instead of tabs.
+set softtabstop=2         " Tab key indents by 2 spaces.
+set tabstop=2
+set shiftround            " >> indents to next multiple of 'shiftwidth'.
+set shiftwidth=2          " >> indents by 2 spaces.
+set splitright            " split the new file open on the right
+set updatetime=300
+set foldmethod=indent
+set nofoldenable
+"set colorcolumn=80
+highlight ColorColumn ctermbg=DarkGray guibg=darkgray
+" Auto remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Key shortcut
+" record macro, use @ to execute
+noremap ! q
+noremap q ^
+noremap f e
+noremap e $
+noremap J 10j
+noremap K 10k
+noremap L 10l
+noremap H 10h
+noremap ) :nohls<CR>
+noremap T :W<CR>
+" Opposite of <C-o>
+nnoremap <C-u> <C-I>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+" Change Search forward to # and backward to *
+nnoremap # *
+nnoremap * #
+nmap ( :set invnumber<CR>
+" Map localleader to space
+let maplocalleader = " "
+
+nnoremap S :w<CR>
+
+" noremap is non-recursive means it will be execute rightaway
+" map to move block of code up and down
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+noremap + gg=G
+
+" mapping to swith between view points
+nnoremap <C-k> <C-w>w
+nnoremap <C-j> <C-w>W
+noremap <C-h> <C-w>10<
+noremap <C-l> <C-w>10>
+
+" Copy to clipboard
+vnoremap cp "+y<CR>
+
+" Make sure these deletions are not replaced yanked register
+" use x for delete and replace yanks
+nnoremap d "_d
+vnoremap d "_d
+" https://stackoverflow.com/questions/290465/how-to-paste-over-without-overwriting-register
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+
+vnoremap <silent> <expr> p <sid>Repl()
+
+" Prevent insert when press C-space
+noremap <NUL> <ESC>
+
+" Prevent from opening scratch preview window
+set completeopt-=preview
+
+" Quickly open a todo file
+command T :35vsp ~/.cache/todo.md
+command S :35vsp ~/.cache/scripts.sh
+
+
+
 " ---------------------------------------
 " PLUGIN-vim-polyglot
 " ----------------------------------------
@@ -52,8 +147,8 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 " ----------------------------------------
 " PLUGIN-conjure
 " ----------------------------------------
+
 let g:conjure#client#scheme#stdio#command = "scheme"
-let maplocalleader = " "
 let g:conjure#mapping#doc_word = "d"
 let g:conjure#log#wrap = v:true
 let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
@@ -128,97 +223,6 @@ nnoremap <silent> C :CocCommand<CR>
 " ----------------------------------------
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
 let g:AutoPairsShortcutToggle="M-e"
-
-" ----------------------------------------
-" Set everything
-" ----------------------------------------
-let g:python_recommended_style = 0
-filetype plugin on
-syntax on
-set cursorline number ruler
-set mouse=a hls is ic
-set backspace=indent,eol,start
-set smartcase ignorecase
-set smartindent           " auto indent at new line
-set autoindent            " Indent according to previous line.
-set expandtab             " Use spaces instead of tabs.
-set softtabstop=2         " Tab key indents by 2 spaces.
-set tabstop=2
-set shiftround            " >> indents to next multiple of 'shiftwidth'.
-set shiftwidth=2          " >> indents by 2 spaces.
-set splitright            " split the new file open on the right
-set updatetime=300
-set foldmethod=indent
-set nofoldenable
-"set colorcolumn=80
-highlight ColorColumn ctermbg=DarkGray guibg=darkgray
-" Auto remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Key shortcut
-" record macro, use @ to execute
-noremap ! q
-noremap q ^
-noremap f e
-noremap e $
-noremap J 10j
-noremap K 10k
-noremap L 10l
-noremap H 10h
-noremap ) :nohls<CR>
-noremap T :W<CR>
-" Opposite of <C-o>
-nnoremap <C-u> <C-I>
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-" Change Search forward to # and backward to *
-nnoremap # *
-nnoremap * #
-nmap ( :set invnumber<CR>
-
-nnoremap S :w<CR>
-
-" noremap is non-recursive means it will be execute rightaway
-" map to move block of code up and down
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-noremap + gg=G
-
-" mapping to swith between view points
-nnoremap <C-k> <C-w>w
-nnoremap <C-j> <C-w>W
-noremap <C-h> <C-w>10<
-noremap <C-l> <C-w>10>
-
-" Copy to clipboard
-vnoremap cp "+y<CR>
-
-" Make sure these deletions are not replaced yanked register
-" use x for delete and replace yanks
-nnoremap d "_d
-vnoremap d "_d
-" https://stackoverflow.com/questions/290465/how-to-paste-over-without-overwriting-register
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-
-function! s:Repl()
-    let s:restore_reg = @"
-    return "p@=RestoreRegister()\<cr>"
-endfunction
-
-vnoremap <silent> <expr> p <sid>Repl()
-
-" Prevent insert when press C-space
-noremap <NUL> <ESC>
-
-" Prevent from opening scratch preview window
-set completeopt-=preview
-
-" Quickly open a todo file
-command T :35vsp ~/.cache/todo.md
-command S :35vsp ~/.cache/scripts.sh
 
 " ----------------------------------------
 " PLUGIN-NERDTREE

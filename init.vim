@@ -76,15 +76,14 @@ noremap ) :nohls<CR>
 noremap T :W<CR>
 " Opposite of <C-o>
 nnoremap <C-u> <C-I>
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+"nnoremap <Tab> gt
+"nnoremap <S-Tab> gT
 " Change Search forward to # and backward to *
 nnoremap # *
 nnoremap * #
 nmap ( :set invnumber<CR>
 " Map localleader to space
 let maplocalleader = " "
-
 nnoremap S :w<CR>
 
 " noremap is non-recursive means it will be execute rightaway
@@ -94,10 +93,14 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 noremap + gg=G
 
 " mapping to swith between view points
-nnoremap <C-k> <C-w>w
-nnoremap <C-j> <C-w>W
+nnoremap <Tab> <C-w>w
+nnoremap <S-tab> <C-w>W
 noremap <C-h> <C-w>10<
 noremap <C-l> <C-w>10>
+
+" map up and down arrow keys for select completion
+inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<Up>"
+inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<Down>"
 
 " Copy to clipboard
 vnoremap cp "+y<CR>
@@ -156,7 +159,6 @@ let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
 let g:conjure#log#hud#anchor = "SE"
-let g:clojure_align_subforms = 1
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er
@@ -170,10 +172,10 @@ nnoremap cn :ConjureConnect<CR>
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
 " ----------------------------------------
-let g:clojure_align_subforms = 0
+let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-migrations']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations']
 let g:clojure_maxlines = 50
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
@@ -208,7 +210,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> gt :call CocAction('jumpDefinition', 'tabe')<CR>
+nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list

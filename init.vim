@@ -1,3 +1,9 @@
+" ---------------------------------------
+" PLUGIN-vim-polyglot
+" ----------------------------------------
+let g:python_highlight_space_errors = 0
+let g:polyglot_disabled = ['autoindent']
+
 call plug#begin()
 " Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -131,13 +137,6 @@ set completeopt-=preview
 " Quickly open a todo file
 command T :35vsp ~/.cache/todo.md
 command S :35vsp ~/.cache/scripts.sh
-
-
-
-" ---------------------------------------
-" PLUGIN-vim-polyglot
-" ----------------------------------------
-let g:python_highlight_space_errors = 0
 
 
 " ---------------------------------------

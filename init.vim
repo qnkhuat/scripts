@@ -69,8 +69,9 @@ highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Key shortcut
-" record macro, use @ to execute
+" record macro, use ; to execute
 noremap ! q
+noremap ; @
 noremap q ^
 noremap f e
 noremap e $

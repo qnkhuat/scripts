@@ -73,8 +73,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 noremap ! q
 noremap ; @
 noremap q ^
-noremap f e
-noremap e $
+"noremap f e
+noremap t $
 noremap J 10j
 noremap K 10k
 noremap L 10l
@@ -139,6 +139,14 @@ set completeopt-=preview
 command T :35vsp ~/.cache/todo.md
 command S :35vsp ~/.cache/scripts.sh
 
+function! DecompileJava()
+  set ft=java
+  set ro
+  execute '1,$d'
+  execute '0r !procyon-decompiler ' . shellescape(expand('%'), 1)
+endfunction
+
+autocmd BufReadPost *.class call DecompileJava()
 
 " ---------------------------------------
 " PLUGIN-vim-gitgutter
@@ -158,7 +166,8 @@ let g:conjure#client#clojure#nrepl#eval#raw_out = v:true
 let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
-let g:conjure#log#hud#anchor = "SE"
+let g:conjure#log#hud#anchor = "NE"
+"let g:conjure#log#hud#enabled = v:false
 " Eval
 xmap s <localleader>E
 nmap s <localleader>er
@@ -224,7 +233,6 @@ nnoremap <silent> C :CocCommand<CR>
 " PLUGIN-auto-pairs
 " ----------------------------------------
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
-let g:AutoPairsShortcutToggle="M-e"
 
 " ----------------------------------------
 " PLUGIN-NERDTREE
@@ -246,14 +254,6 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 "set winfixwidth winfixheight
 set autoread
 
-function! DecompileJava()
-  set ft=java
-  set ro
-  execute '1,$d'
-  execute '0r !procyon-decompiler ' . shellescape(expand('%'), 1)
-endfunction
-
-autocmd BufReadPost *.class call DecompileJava()
 " ----------------------------------------
 " PLUGIN-FZF
 " ----------------------------------------
@@ -261,13 +261,14 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'opti
 nnoremap <silent> <C-p> :GFiles <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>
+nnoremap U :Jumps<CR>
 " Show commits
 nnoremap gc :Commits<CR>
 " Show all commits of current buffer
 nnoremap gb :BCommits<CR>
 
 " Shortcut to run a executable fiel
-nnoremap <C-b> :!clear && ./run.sh<Enter>
+"nnoremap <C-b> :!clear && ./run.sh<Enter>
 
 " ----------------------------------------
 " PLUGIN-slime
@@ -308,7 +309,6 @@ let g:rbpt_colorpairs = [
 " ----------------------------------------
 " PLUGIN-copilot
 " ----------------------------------------
-"disable github copilot
 let g:copilot_enabled = v:false
 
 " ----------------------------------------

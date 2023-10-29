@@ -30,14 +30,14 @@ Plug 'evanleck/vim-svelte', {'for': 'svelte'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
-" Copy code between buffers
+" Copy codebetween buffers
 Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python'], 'tag': 'v4.44.2'}
-"Plug 'venantius/vim-cljfmt', {'for': ['clojure']}
+Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python', 'scheme'], 'tag': 'v4.44.2'}
 
 Plug 'github/copilot.vim'
+Plug 'preservim/nerdcommenter'
 
 " Decompile java class files
 call plug#end()
@@ -67,6 +67,8 @@ set nofoldenable
 highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 " Auto remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+" Map leader to space
+let maplocalleader = " "
 
 " Key shortcut
 " record macro, use ; to execute
@@ -81,18 +83,16 @@ noremap L 10l
 noremap H 10h
 noremap ) :nohls<CR>
 noremap T :W<CR>
+" move up half a page
+nnoremap U <C-u>
+nnoremap I <C-d>
 " Opposite of <C-o>
 nnoremap <C-u> <C-I>
-"nnoremap <Tab> gt
-"nnoremap <S-Tab> gT
 " Change Search forward to # and backward to *
 nnoremap # *
 nnoremap * #
 nmap ( :set invnumber<CR>
-" Map localleader to space
-let maplocalleader = " "
 nnoremap S :w<CR>
-
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
 vnoremap <C-j> :m '>+1<CR>gv=gv
@@ -156,9 +156,44 @@ highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " ----------------------------------------
+" PLUGIN-coc.vim
+" ----------------------------------------
+" coc-conjure will make sure all suggestions, document of clojure code linked to coc-completion
+let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure', 'coc-rust-analyzer']
+highlight CocFloating ctermbg=darkblue ctermfg=white
+highlight NormalFloat ctermbg=black guibg=black
+nmap <silent> cr <Plug>(coc-rename)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
+
+" Use K to show documentation in preview window
+nnoremap <silent> D :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('D', 'in')
+  endif
+endfunction
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Use N to show documentation in preview window
+nnoremap <silent> C :CocCommand<CR>
+
+" ----------------------------------------
 " PLUGIN-conjure
 " ----------------------------------------
 
+nnoremap cn :ConjureConnect<CR>
 let g:conjure#client#scheme#stdio#command = "scheme"
 let g:conjure#mapping#doc_word = "d"
 let g:conjure#log#wrap = v:true
@@ -175,8 +210,7 @@ nmap s <localleader>er
 xmap <C-s> o;; => <C-r>c<ESC><CR>
 nmap <C-s> o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
-nnoremap D :ConjureDoc<CR>
-nnoremap cn :ConjureConnect<CR>
+autocmd FileType python,clojure,lisp,scheme nnoremap D :ConjureDoc<CR>
 
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
@@ -184,7 +218,7 @@ nnoremap cn :ConjureConnect<CR>
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!']
 let g:clojure_maxlines = 50
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
@@ -193,6 +227,11 @@ let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,
 " ----------------------------------------
 let g:parinfer_force_balance = v:false
 let g:parinfer_mode = 'paren'
+
+" ----------------------------------------
+" PLUGIN-preservim/nerdcommenter
+" ----------------------------------------
+vnoremap C V}:call nerdcommenter#Comment('x', 'toggle')<CR>
 
 " ----------------------------------------
 " PLUGIN-vim-fugitive
@@ -207,32 +246,10 @@ let g:gofmt_on_save = 1
 let g:go_highlight_trailing_whitespace_error=0
 
 " ----------------------------------------
-" PLUGIN-coc.vim
-" ----------------------------------------
-" coc-conjure will make sure all suggestions, document of clojure code linked to coc-completion
-let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure', 'coc-rust-analyzer']
-highlight CocFloating ctermbg=darkblue ctermfg=white
-highlight NormalFloat ctermbg=black guibg=black
-nmap <silent> cr <Plug>(coc-rename)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
-nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Use N to show documentation in preview window
-nnoremap <silent> C :CocCommand<CR>
-
-" ----------------------------------------
 " PLUGIN-auto-pairs
 " ----------------------------------------
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```', '"""':'"""', "'''":"'''"}
+
 
 " ----------------------------------------
 " PLUGIN-NERDTREE
@@ -261,7 +278,7 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'opti
 nnoremap <silent> <C-p> :GFiles <cr>
 nnoremap <silent> <C-f> :Ag <cr>
 nnoremap M :Marks<CR>
-nnoremap U :Jumps<CR>
+"nnoremap U :Jumps<CR>
 " Show commits
 nnoremap gc :Commits<CR>
 " Show all commits of current buffer

@@ -169,6 +169,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
+command! -nargs=1 CS CocSearch <args>
 
 " Use K to show documentation in preview window
 nnoremap <silent> D :call ShowDocumentation()<CR>

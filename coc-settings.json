@@ -2,6 +2,8 @@
   "diagnostic.enable": true,
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.checkCurrentLine": false,
+  "diagnostic.level": "information",
+  "inlayHint.enable": false,
   "coc.source.conjure.priority": 999999,
   "list.previewSplitRight": false,
   "notification.disabledProgressSources": ["*"],
@@ -15,15 +17,48 @@
   "suggest.removeDuplicateItems": true,
   "languageserver": {
     "clojure-lsp": {
-      "command": "bash",
-      "args": ["-c", "clojure-lsp"],
+      "command": "clojure-lsp",
       "filetypes": ["clojure"],
-      "rootPatterns": ["project.clj", "deps.edn"],
-      "additionalSchemes": ["jar", "zipfile"],
-      "trace.server": "verbose",
       "disableDiagnostics": false,
-      "initializationOptions": {}
+      "rootPatterns": ["deps.edn", "project.clj"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "initializationOptions": {
+        "project-specs": [{
+          "project-path": "deps.edn",
+          "classpath-cmd": ["clj", "-Spath"]
+        }],
+        "use-metadata-for-privacy?": true
+      }
     }
-  }
+  },
+  "diagnostic-languageserver.linters": {
+    "clj_kondo_lint": {
+      "command": "clj-kondo",
+      "debounce": 100,
+      "args": [ "--lint", "%filepath"],
+      "offsetLine": 0,
+      "offsetColumn": 0,
+      "sourceName": "clj-kondo",
+      "formatLines": 1,
+      "formatPattern": [
+        "^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+        {
+          "line": 1,
+          "column": 2,
+          "message": 4,
+          "security": 3
+        }
+      ],
+      "securities": {
+        "error": "error",
+        "warning": "warning",
+        "note": "info"
+      }
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "clojure": "clj_kondo_lint"
+  },
+  "svelte.ask-to-enable-ts-plugin": false,
   "refactor.openCommand": "topleft vs",
 }

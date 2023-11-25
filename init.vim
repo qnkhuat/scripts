@@ -34,7 +34,7 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python', 'scheme'], 'tag': 'v4.44.2'}
+Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python', 'scheme', 'sql'], 'tag': 'v4.44.2'}
 
 Plug 'github/copilot.vim'
 Plug 'preservim/nerdcommenter'
@@ -63,6 +63,7 @@ set splitright            " split the new file open on the right
 set updatetime=300
 set foldmethod=indent
 set nofoldenable
+set nowrap
 "set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 " Auto remove trailing whitespace
@@ -100,14 +101,10 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 noremap + gg=G
 
 " mapping to swith between view points
-nnoremap <Tab> <C-w>w
-nnoremap <S-tab> <C-w>W
+noremap <Tab> <C-w>w
+noremap <S-tab> <C-w>W
 noremap <C-h> <C-w>10<
 noremap <C-l> <C-w>10>
-
-" map up and down arrow keys for select completion
-inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<Up>"
-inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<Down>"
 
 " Copy to clipboard
 vnoremap cp "+y<CR>
@@ -156,10 +153,13 @@ highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " ----------------------------------------
-" PLUGIN-coc.vim
+" PLUGIN-coc.nvim
 " ----------------------------------------
 " coc-conjure will make sure all suggestions, document of clojure code linked to coc-completion
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-conjure', 'coc-rust-analyzer']
+" map up and down arrow keys for select completion
+inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<Up>"
+inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<Down>"
 highlight CocFloating ctermbg=darkblue ctermfg=white
 highlight NormalFloat ctermbg=black guibg=black
 nmap <silent> cr <Plug>(coc-rename)
@@ -169,7 +169,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
-command! -nargs=1 CS CocSearch <args>
+"command! -nargs=* CS CocSearch <args>
+cnoreabbrev CS CocSearch
+
 
 " Use K to show documentation in preview window
 nnoremap <silent> D :call ShowDocumentation()<CR>
@@ -219,8 +221,9 @@ autocmd FileType python,clojure,lisp,scheme nnoremap D :ConjureDoc<CR>
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!', 'condas->']
 let g:clojure_maxlines = 50
+" indent with 2 spaces list
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
 
 " ----------------------------------------
@@ -277,7 +280,12 @@ set autoread
 " ----------------------------------------
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 nnoremap <silent> <C-p> :GFiles <cr>
-nnoremap <silent> <C-f> :Ag <cr>
+"nnoremap <silent> <C-f> :Ag <cr>
+if system('git rev-parse --is-inside-work-tree 2>/dev/null | tr -d "\n"') == 'true'
+  nnoremap <silent> <C-f> :Ag<CR>
+else
+  nnoremap <silent> <C-f> :Files<CR>
+endif
 nnoremap M :Marks<CR>
 "nnoremap U :Jumps<CR>
 " Show commits

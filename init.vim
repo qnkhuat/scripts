@@ -34,7 +34,7 @@ Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python', 'scheme', 'sql'], 'tag': 'v4.44.2'}
+Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python', 'scheme', 'sql'], 'tag': 'v4.48.0'}
 
 Plug 'github/copilot.vim'
 Plug 'preservim/nerdcommenter'
@@ -172,7 +172,6 @@ nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
 "command! -nargs=* CS CocSearch <args>
 cnoreabbrev CS CocSearch
 
-
 " Use K to show documentation in preview window
 nnoremap <silent> D :call ShowDocumentation()<CR>
 
@@ -279,12 +278,11 @@ set autoread
 " PLUGIN-FZF
 " ----------------------------------------
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
-nnoremap <silent> <C-p> :GFiles <cr>
-"nnoremap <silent> <C-f> :Ag <cr>
+nnoremap <silent> <C-f> :Ag<CR>
 if system('git rev-parse --is-inside-work-tree 2>/dev/null | tr -d "\n"') == 'true'
-  nnoremap <silent> <C-f> :Ag<CR>
+  nnoremap <silent> <C-p> :GFiles <cr>
 else
-  nnoremap <silent> <C-f> :Files<CR>
+  nnoremap <silent> <C-p> :Files<CR>
 endif
 nnoremap M :Marks<CR>
 "nnoremap U :Jumps<CR>

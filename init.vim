@@ -31,13 +31,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Copy codebetween buffers
-Plug 'jpalardy/vim-slime'
+"Plug 'jpalardy/vim-slime'
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'lisp', 'python', 'scheme', 'sql'], 'tag': 'v4.48.0'}
+Plug 'Olical/conjure', {'for': ['clojure', 'python', 'scheme'], 'tag': 'v4.48.0'}
 
 Plug 'github/copilot.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'vlime/vlime', {'rtp': 'vim/'}
 
 " Decompile java class files
 call plug#end()
@@ -206,13 +207,19 @@ let g:conjure#log#hud#height = 0.4
 let g:conjure#log#hud#anchor = "NE"
 "let g:conjure#log#hud#enabled = v:false
 " Eval
-xmap s <localleader>E
-nmap s <localleader>er
+autocmd FileType python,clojure,schemexmap s <localleader>E
+autocmd FileType python,clojure,schemenmap s <localleader>er
 " add result as comment to next line
-xmap <C-s> o;; => <C-r>c<ESC><CR>
-nmap <C-s> o;; => <C-r>c<ESC><CR>
+autocmd FileType python,clojure,schemexmap <C-s> o;; => <C-r>c<ESC><CR>
+autocmd FileType python,clojure,schemenmap <C-s> o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
-autocmd FileType python,clojure,lisp,scheme nnoremap D :ConjureDoc<CR>
+autocmd FileType python,clojure,scheme nnoremap D :ConjureDoc<CR>
+
+" ----------------------------------------
+" PLUGIN-vlime
+" ----------------------------------------
+let g:vlime_window_settings = {'repl': {'vertical': v:true}, 'mrepl': {'vertical': v:true}, 'sldb': {'size': 15}}
+autocmd FileType lisp nmap s <localleader>st
 
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim
@@ -220,7 +227,7 @@ autocmd FileType python,clojure,lisp,scheme nnoremap D :ConjureDoc<CR>
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!', 'condas->']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!', 'condas->', 'are', 'discard-setting-changes']
 let g:clojure_maxlines = 50
 " indent with 2 spaces list
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
@@ -293,15 +300,6 @@ nnoremap gb :BCommits<CR>
 
 " Shortcut to run a executable fiel
 "nnoremap <C-b> :!clear && ./run.sh<Enter>
-
-" ----------------------------------------
-" PLUGIN-slime
-" ----------------------------------------
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-xmap cpp <Plug>SlimeRegionSend
-nmap cpp <Plug>SlimeParagraphSend
-nmap <c-c>v <Plug>SlimeConfig
 
 " ----------------------------------------
 " PLUGIN-rainbow_parentheses

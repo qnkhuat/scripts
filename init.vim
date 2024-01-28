@@ -30,15 +30,11 @@ Plug 'evanleck/vim-svelte', {'for': 'svelte'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
-" Copy codebetween buffers
-"Plug 'jpalardy/vim-slime'
-
 " Clojure
 Plug 'Olical/conjure', {'for': ['clojure', 'python', 'scheme'], 'tag': 'v4.48.0'}
 
 Plug 'github/copilot.vim'
-Plug 'preservim/nerdcommenter'
-Plug 'vlime/vlime', {'rtp': 'vim/'}
+Plug 'qnkhuat/vlime', {'rtp': 'vim/'}
 
 " Decompile java class files
 call plug#end()
@@ -47,6 +43,7 @@ call plug#end()
 " Set everything
 " ----------------------------------------
 let g:python_recommended_style = 0
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 filetype plugin on
 syntax on
 set cursorline number ruler
@@ -207,11 +204,11 @@ let g:conjure#log#hud#height = 0.4
 let g:conjure#log#hud#anchor = "NE"
 "let g:conjure#log#hud#enabled = v:false
 " Eval
-autocmd FileType python,clojure,schemexmap s <localleader>E
-autocmd FileType python,clojure,schemenmap s <localleader>er
+autocmd FileType python,clojure,scheme xmap s <localleader>E
+autocmd FileType python,clojure,scheme nmap s <localleader>er
 " add result as comment to next line
-autocmd FileType python,clojure,schemexmap <C-s> o;; => <C-r>c<ESC><CR>
-autocmd FileType python,clojure,schemenmap <C-s> o;; => <C-r>c<ESC><CR>
+autocmd FileType python,clojure,scheme xmap <C-s> o;; => <C-r>c<ESC><CR>
+autocmd FileType python,clojure,scheme nmap <C-s> o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 autocmd FileType python,clojure,scheme nnoremap D :ConjureDoc<CR>
 
@@ -219,7 +216,9 @@ autocmd FileType python,clojure,scheme nnoremap D :ConjureDoc<CR>
 " PLUGIN-vlime
 " ----------------------------------------
 let g:vlime_window_settings = {'repl': {'vertical': v:true}, 'mrepl': {'vertical': v:true}, 'sldb': {'size': 15}}
+let g:vlime_auto_show_arglist = v:false
 autocmd FileType lisp nmap s <localleader>st
+autocmd FileType lisp xmap s <localleader>st
 
 " ----------------------------------------
 " PLUGIN-clojure-vim/clojure.vim

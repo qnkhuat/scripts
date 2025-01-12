@@ -1,9 +1,3 @@
-" ---------------------------------------
-" PLUGIN-vim-polyglot
-" ----------------------------------------
-let g:python_highlight_space_errors = 0
-let g:polyglot_disabled = ['autoindent']
-
 call plug#begin()
 " Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -23,30 +17,30 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-surround'
-" all in one language highlight
-Plug 'sheerun/vim-polyglot'
-Plug 'evanleck/vim-svelte', {'for': 'svelte'}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim', {'for': 'go'}
 
 " Clojure
-Plug 'Olical/conjure', {'for': ['clojure', 'python', 'scheme'], 'tag': 'v4.48.0'}
+Plug 'Olical/conjure', {'for': ['clojure', 'python', 'scheme'], 'tag': 'v4.53.0'}
 
 Plug 'github/copilot.vim'
-Plug 'qnkhuat/vlime', {'rtp': 'vim/'}
 
-" Decompile java class files
+" vim-arsync depedencies
+Plug 'prabirshrestha/async.vim'
+" Remote editing
+Plug 'qnkhuat/vim-arsync'
+
 call plug#end()
 
 " ----------------------------------------
 " Set everything
 " ----------------------------------------
 let g:python_recommended_style = 0
-let g:python3_host_prog = '/opt/homebrew/bin/python3'
+filetype on
 filetype plugin on
 syntax on
-set cursorline number ruler
+set number ruler
 set mouse=a hls is ic
 set backspace=indent,eol,start
 set smartcase ignorecase
@@ -62,7 +56,12 @@ set updatetime=300
 set foldmethod=indent
 set nofoldenable
 set nowrap
+autocmd FileType markdown setlocal wrap
 "set colorcolumn=80
+set nocursorline
+" override default nvim 0.10.0 color
+colorscheme vim
+set notermguicolors
 highlight ColorColumn ctermbg=DarkGray guibg=darkgray
 " Auto remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -74,7 +73,7 @@ let maplocalleader = " "
 noremap ! q
 noremap ; @
 noremap q ^
-"noremap f e
+noremap c t
 noremap t $
 noremap J 10j
 noremap K 10k
@@ -90,13 +89,16 @@ nnoremap <C-u> <C-I>
 " Change Search forward to # and backward to *
 nnoremap # *
 nnoremap * #
-nmap ( :set invnumber<CR>
+"nnoremap ( :set invnumber<CR>
 nnoremap S :w<CR>
 " noremap is non-recursive means it will be execute rightaway
 " map to move block of code up and down
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 noremap + gg=G
+" unmap the built-in Y -> y$
+vnoremap Y y
+cnoreabbrev epy !python3 %
 
 " mapping to swith between view points
 noremap <Tab> <C-w>w
@@ -120,6 +122,18 @@ endfunction
 function! s:Repl()
     let s:restore_reg = @"
     return "p@=RestoreRegister()\<cr>"
+endfunction
+
+function! SpellToggle()
+  if &spell
+    setlocal nospell
+    setlocal spelllang=en
+    echo "Spell checking disabled"
+  else
+    setlocal spell
+    setlocal spelllang=en_us
+    echo "Spell checking enabled"
+  endif
 endfunction
 
 vnoremap <silent> <expr> p <sid>Repl()
@@ -159,6 +173,7 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-diagnostic', 'coc-
 inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<Up>"
 inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<Down>"
 highlight CocFloating ctermbg=darkblue ctermfg=white
+highlight FgCocInfoFloatBgCocFloating ctermfg=white ctermbg=darkblue guifg=LightBlue
 highlight NormalFloat ctermbg=black guibg=black
 nmap <silent> cr <Plug>(coc-rename)
 nmap <silent> gr <Plug>(coc-references)
@@ -202,7 +217,11 @@ let g:conjure#client#clojure#nrepl#test#raw_out = v:true
 let g:conjure#log#hud#width = 0.45
 let g:conjure#log#hud#height = 0.4
 let g:conjure#log#hud#anchor = "NE"
+let g:conjure#client#python#stdio#command = "/Users/earther/.pyenv/shims/python3 -iq"
 "let g:conjure#log#hud#enabled = v:false
+
+" Eval comment block like do block
+let g:conjure#eval#gsubs = {'do-comment': ['^%(comment[%s%c]', '(do ']}
 " Eval
 autocmd FileType python,clojure,scheme xmap s <localleader>E
 autocmd FileType python,clojure,scheme nmap s <localleader>er
@@ -225,8 +244,8 @@ autocmd FileType lisp xmap s <localleader>st
 " ----------------------------------------
 let g:clojure_align_subforms = 1
 let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!', 'condas->', 'are', 'discard-setting-changes']
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$', 'with-api-error-message']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '-tpl$', '^prog', 'dataset', 'test-drivers', 'test-driver', 'test-migrations', 'test-helpers-set-global-values!', 'condas->', 'are', 'discard-setting-changes', 'try', 'finally', 'match', 'mbql-query', 'do', 'ignore-exceptions', 'comment', 'with-task-history', 'cond']
 let g:clojure_maxlines = 50
 " indent with 2 spaces list
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
@@ -236,11 +255,6 @@ let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,
 " ----------------------------------------
 let g:parinfer_force_balance = v:false
 let g:parinfer_mode = 'paren'
-
-" ----------------------------------------
-" PLUGIN-preservim/nerdcommenter
-" ----------------------------------------
-vnoremap C V}:call nerdcommenter#Comment('x', 'toggle')<CR>
 
 " ----------------------------------------
 " PLUGIN-vim-fugitive
@@ -269,6 +283,7 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"",'"':'"', "`":"", '```':'```'
 map <S-p> :NERDTreeToggle<CR>
 " Show hidden files
 let NERDTreeShowHidden=1
+let NERDTreeHighlightCursorline=0
 "  https://github.com/preservim/nerdtree/issues/1321
 let g:NERDTreeMinimalMenu=1
 
@@ -284,7 +299,9 @@ set autoread
 " PLUGIN-FZF
 " ----------------------------------------
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
 nnoremap <silent> <C-f> :Ag<CR>
+nnoremap <silent> <C-k> :MRU<CR>
 if system('git rev-parse --is-inside-work-tree 2>/dev/null | tr -d "\n"') == 'true'
   nnoremap <silent> <C-p> :GFiles <cr>
 else
@@ -330,7 +347,7 @@ let g:rbpt_colorpairs = [
 " ----------------------------------------
 " PLUGIN-copilot
 " ----------------------------------------
-let g:copilot_enabled = v:false
+"let g:copilot_enabled = v:false
 
 " ----------------------------------------
 " fix Tmux

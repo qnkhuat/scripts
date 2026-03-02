@@ -31,6 +31,19 @@ Plug 'prabirshrestha/async.vim'
 " Remote editing
 Plug 'qnkhuat/vim-arsync'
 
+" avante
+"Plug 'stevearc/dressing.nvim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'MunifTanjim/nui.nvim'
+"
+"" avante: Optional deps
+"Plug 'hrsh7th/nvim-cmp'
+"Plug 'nvim-tree/nvim-web-devicons' "or Plug 'echasnovski/mini.icons'
+"Plug 'HakonHarnes/img-clip.nvim'
+"Plug 'zbirenbaum/copilot.lua'
+"
+"Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
 call plug#end()
 
 " ----------------------------------------
@@ -47,18 +60,30 @@ set smartcase ignorecase
 set smartindent           " auto indent at new line
 set autoindent            " Indent according to previous line.
 set expandtab             " Use spaces instead of tabs.
-set softtabstop=2         " Tab key indents by 2 spaces.
-set tabstop=2
 set shiftround            " >> indents to next multiple of 'shiftwidth'.
-set shiftwidth=2          " >> indents by 2 spaces.
+set softtabstop=2 tabstop=2 shiftwidth=2         " Tab key indents by 2 spaces.
+"autocmd FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 set splitright            " split the new file open on the right
 set updatetime=300
 set foldmethod=indent
 set nofoldenable
 set nowrap
 autocmd FileType markdown setlocal wrap
-"set colorcolumn=80
-set nocursorline
+autocmd FileType json setlocal wrap
+autocmd FileType markdown setlocal statusline=%f\ %h%m%r%=Words:\ %{wordcount().words}\ \ %l,%c\ %P
+set laststatus=2
+augroup CursorLineHighlight
+  autocmd!
+  " Set cursorline only for the active buffer/window
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+
+  " Clear existing cursor line highlighting and set new properties
+  " This ensures it happens after any colorscheme is loaded
+  autocmd VimEnter,WinEnter,BufWinEnter,ColorScheme * highlight clear CursorLine
+  autocmd VimEnter,WinEnter,BufWinEnter,ColorScheme * highlight CursorLine gui=NONE cterm=NONE guibg=#2d2d30 ctermbg=236
+augroup END
+
 " override default nvim 0.10.0 color
 colorscheme vim
 set notermguicolors
@@ -182,8 +207,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gn :call CocAction('jumpDefinition', 'tabe')<CR>
+command! -nargs=1 CocSearchHere execute 'CocSearch ' . <q-args> . ' --glob ' . expand('%:h') . '/**'
 "command! -nargs=* CS CocSearch <args>
 cnoreabbrev CS CocSearch
+cnoreabbrev CSH CocSearchHere
 
 " Use K to show documentation in preview window
 nnoremap <silent> D :call ShowDocumentation()<CR>
@@ -226,7 +253,6 @@ let g:conjure#eval#gsubs = {'do-comment': ['^%(comment[%s%c]', '(do ']}
 autocmd FileType python,clojure,scheme xmap s <localleader>E
 autocmd FileType python,clojure,scheme nmap s <localleader>er
 " add result as comment to next line
-autocmd FileType python,clojure,scheme xmap <C-s> o;; => <C-r>c<ESC><CR>
 autocmd FileType python,clojure,scheme nmap <C-s> o;; => <C-r>c<ESC><CR>
 nnoremap F :ConjureDef<CR>
 autocmd FileType python,clojure,scheme nnoremap D :ConjureDoc<CR>
@@ -294,12 +320,32 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 " prevent nerdtree from resize panes when toggle
 "set winfixwidth winfixheight
 set autoread
+au CursorHold * checktime
 
 " ----------------------------------------
 " PLUGIN-FZF
 " ----------------------------------------
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
+function! s:fzf_preview_p(bang, ...) abort
+    let preview_args = get(g:, 'fzf_preview_window', ['right:50%', 'ctrl-/'])
+    if empty(preview_args)
+        return { 'options': ['--preview-window', 'hidden'] }
+    endif
+
+    " For backward-compatiblity
+    if type(preview_args) == type('')
+        let preview_args = [preview_args]
+    endif
+    return call('fzf#vim#with_preview', extend(copy(a:000), preview_args))
+endfunction
+
+  command! -bar -bang MP
+        \ call fzf#vim#marks(
+        \     s:fzf_preview_p(<bang>0, {'placeholder': '$([ -r $(echo {4} | sed "s#^~#$HOME#") ] && echo {4} || echo ' . fzf#shellescape(expand('%')) . '):{2}',
+        \               'options': '--preview-window +{2}-/2'}),
+        \     <bang>0)
+
 nnoremap <silent> <C-f> :Ag<CR>
 nnoremap <silent> <C-k> :MRU<CR>
 if system('git rev-parse --is-inside-work-tree 2>/dev/null | tr -d "\n"') == 'true'
@@ -307,7 +353,7 @@ if system('git rev-parse --is-inside-work-tree 2>/dev/null | tr -d "\n"') == 'tr
 else
   nnoremap <silent> <C-p> :Files<CR>
 endif
-nnoremap M :Marks<CR>
+nnoremap M :MP<CR>
 "nnoremap U :Jumps<CR>
 " Show commits
 nnoremap gc :Commits<CR>
@@ -347,7 +393,7 @@ let g:rbpt_colorpairs = [
 " ----------------------------------------
 " PLUGIN-copilot
 " ----------------------------------------
-"let g:copilot_enabled = v:false
+let g:copilot_enabled = v:false
 
 " ----------------------------------------
 " fix Tmux
@@ -361,3 +407,87 @@ if &term =~ "screen"
   exec "set t_PS=\e[200~"
   exec "set t_PE=\e[201~"
 endif
+
+
+"let g:mark_sign_id = 1000
+"sign define mysign text=▶ texthl=WarningMsg
+"nnoremap mc :call SignLine()<CR>
+"nnoremap md :call UnsignLine()<CR>
+"nnoremap mj :call JumpToNextSign()<CR>
+
+"function! SignLine()
+"  execute 'sign place ' . g:mark_sign_id . ' line=' . line('.') . ' name=mysign buffer=' . bufnr('%')
+"  let g:mark_sign_id += 1
+"endfunction
+"
+"function! UnsignLine()
+"  let line_num = line('.')
+"  let bufnr = bufnr('%')
+"
+"  " Get all signs in the current buffer
+"  let signs_output = execute('sign place buffer=' . bufnr)
+"
+"  " Find signs on the current line
+"  let pattern = 'line=' . line_num . '\s\+id=\(\d\+\)'
+"  let match_list = matchlist(signs_output, pattern)
+"
+"  " If a sign was found on the current line, unplace it
+"  if len(match_list) > 1
+"    let sign_id = match_list[1]
+"    execute 'sign unplace ' . sign_id . ' buffer=' . bufnr
+"  else
+"    echo "No sign found on the current line"
+"  endif
+"endfunction
+"
+"function! JumpToNextSign()
+"  let bufnr = bufnr('%')
+"  let current_line = line('.')
+"
+"  " Get all signs in the current buffer
+"  let signs_output = execute('sign place buffer=' . bufnr)
+"
+"  " Extract all line numbers with signs
+"  let sign_lines = []
+"  let pattern = 'line=\(\d\+\)'
+"  let start_idx = 0
+"
+"  " Find all matches in the output
+"  while 1
+"    let match_idx = match(signs_output, pattern, start_idx)
+"    if match_idx == -1
+"      break
+"    endif
+"
+"    let match_end = matchend(signs_output, pattern, start_idx)
+"    let line_num = str2nr(matchstr(signs_output[match_idx:match_end], '\d\+'))
+"    call add(sign_lines, line_num)
+"
+"    let start_idx = match_end
+"  endwhile
+"
+"  " Sort the line numbers
+"  call sort(sign_lines, 'n')
+"
+"  " Find the next sign after the current line
+"  let next_line = 0
+"  for line_num in sign_lines
+"    if line_num > current_line
+"      let next_line = line_num
+"      break
+"    endif
+"  endfor
+"
+"  " If no next sign found, wrap around to the first sign
+"  if next_line == 0 && len(sign_lines) > 0
+"    let next_line = sign_lines[0]
+"  endif
+"
+"  " Jump to the next sign if found
+"  if next_line > 0
+"    execute next_line
+"    echo "Jumped to sign on line " . next_line
+"  else
+"    echo "No signs found in buffer"
+"  endif
+"endfunction

@@ -11,9 +11,11 @@ Visual signal for Claude Code sessions running inside tmux.
 
 | Event | Pane background |
 |---|---|
-| Claude finishes its turn (`Stop` hook) | gray, unless the pane is already in focus |
+| Claude finishes its turn (`Stop` hook) | gray |
+| Claude blocks for permission / idle input (`Notification` hook) | gray |
 | User focuses the pane (tmux `pane-focus-in`) | cleared |
-| User submits a prompt (`UserPromptSubmit` hook) | cleared (backup for terminals without focus events) |
+| User submits a prompt (`UserPromptSubmit` hook) | cleared |
+| New Claude session starts (`SessionStart` hook) | cleared |
 
 Also enables a pane-border header showing `pane_index: pane_title`. Claude Code automatically writes the current session topic into the pane title, so every Claude pane self-labels with what it's working on.
 
@@ -35,7 +37,7 @@ The installer:
 
 1. Copies `tmux-attention.sh` to `~/.claude/hooks/tmux-attention.sh`.
 2. Appends pane-header + focus-clear config to `~/.tmux.conf` (sentinel-marked, won't duplicate on re-run).
-3. Patches `~/.claude/settings.json` to register `Stop` and `UserPromptSubmit` hooks. Idempotent — skips if `tmux-attention.sh` is already referenced.
+3. Patches `~/.claude/settings.json` to register `Notification`, `Stop`, `UserPromptSubmit`, and `SessionStart` hooks. Idempotent — skips if `tmux-attention.sh` is already referenced.
 4. Reloads tmux if running.
 
 **Requirements:** `tmux`, `jq`, and a terminal emulator that reports focus events (iTerm2, Alacritty, kitty, WezTerm, recent Terminal.app all do).

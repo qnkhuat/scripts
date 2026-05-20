@@ -44,7 +44,10 @@ set -g pane-border-format ' #{pane_index}: #{pane_title} '
 
 # Clear the gray attention tint as soon as a pane gets focus.
 # Calling tmux commands directly (no run-shell) keeps this near-instant.
-set -g focus-events on
+# Note: focus-events intentionally left off — turning it on makes tmux forward
+# focus-in/out escape sequences to panes, which tmux then sees as output and
+# flags as "activity" on every claude pane you switch away from. The hook still
+# fires for within-tmux pane navigation without it.
 set-hook -g pane-focus-in 'set-option -pu window-style ; set-option -pu window-active-style'
 # === claude-tmux-attention END ===
 EOF

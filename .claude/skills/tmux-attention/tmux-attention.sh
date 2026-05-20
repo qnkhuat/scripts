@@ -11,16 +11,13 @@ ATTENTION_BG="bg=colour237"
 
 case "$1" in
   on)
-    # Skip if the pane is currently visible (active pane in active window).
-    # No point signaling attention for a pane the user is already looking at.
+    # Skip if the pane is currently visible — only inactive panes need a signal.
     ACTIVE=$(tmux display-message -p -t "$TMUX_PANE" -F '#{?pane_active,#{window_active},0}' 2>/dev/null)
     [ "$ACTIVE" = "1" ] && exit 0
     tmux set-option -p -t "$TMUX_PANE" window-style "$ATTENTION_BG" 2>/dev/null
-    tmux set-option -p -t "$TMUX_PANE" window-active-style "$ATTENTION_BG" 2>/dev/null
     ;;
   off)
     tmux set-option -pu -t "$TMUX_PANE" window-style 2>/dev/null
-    tmux set-option -pu -t "$TMUX_PANE" window-active-style 2>/dev/null
     ;;
 esac
 exit 0

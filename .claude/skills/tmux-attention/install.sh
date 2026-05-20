@@ -45,7 +45,7 @@ set -g pane-border-format ' #{pane_index}: #{pane_title} '
 # Clear the gray attention tint as soon as a pane gets focus.
 # Calling tmux commands directly (no run-shell) keeps this near-instant.
 set -g focus-events on
-set-hook -g pane-focus-in 'set-option -pu window-style ; set-option -pu window-active-style'
+set-hook -g pane-focus-in 'set-option -pu window-style'
 # === claude-tmux-attention END ===
 EOF
   echo "✓ tmux config appended: $TMUX_CONF"
@@ -61,18 +61,10 @@ else
   tmp=$(mktemp)
   jq --arg sh "$HOOK_SCRIPT" '
     .hooks //= {} |
-    .hooks.Notification = ((.hooks.Notification // []) + [
-      {matcher: "permission_prompt", hooks: [{type: "command", command: ($sh + " on")}]},
-      {matcher: "idle_prompt",       hooks: [{type: "command", command: ($sh + " on")}]},
-      {matcher: "elicitation_dialog",hooks: [{type: "command", command: ($sh + " on")}]}
-    ]) |
     .hooks.Stop = ((.hooks.Stop // []) + [
       {hooks: [{type: "command", command: ($sh + " on")}]}
     ]) |
     .hooks.UserPromptSubmit = ((.hooks.UserPromptSubmit // []) + [
-      {hooks: [{type: "command", command: ($sh + " off")}]}
-    ]) |
-    .hooks.SessionStart = ((.hooks.SessionStart // []) + [
       {hooks: [{type: "command", command: ($sh + " off")}]}
     ])
   ' "$SETTINGS" > "$tmp" && mv "$tmp" "$SETTINGS"

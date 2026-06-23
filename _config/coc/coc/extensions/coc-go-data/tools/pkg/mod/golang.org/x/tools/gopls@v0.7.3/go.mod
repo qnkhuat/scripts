@@ -8,7 +8,7 @@ require (
 	github.com/sanity-io/litter v1.5.1
 	github.com/sergi/go-diff v1.1.0
 	golang.org/x/mod v0.4.2
-	golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e
+	golang.org/x/sys v0.1.0
 	golang.org/x/tools v0.1.8-0.20211014194737-fc98fb2abd48
 	honnef.co/go/tools v0.2.0
 	mvdan.cc/gofumpt v0.1.1
